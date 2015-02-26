@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <meta name="application-name" content="iPT Web App">
+    <meta name="apple-mobile-web-app-title" content="iPT Web App">
+    <title>iPrimetime Employees</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="dist/css/framework7.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+    <!-- Path to the font awesome-->
+    <link rel="stylesheet" href="dist/css/font-awesome.min.css">
+
+    <!--Not sure if these work yet-->
+    <link rel="apple-touch-icon" href="img/Icon-60@2x.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/Icon-60@3x.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="img/Icon-76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="img/Icon-76@2x.png" />
+    <link rel="apple-touch-icon" sizes="58x58" href="img/Icon-Small@2x.png" />
+    <link rel="icon" sizes="192x192" href="img/icon.png"> <!--For Chrome/Android-->
+
+    <link rel="manifest" href="manifest.json"> <!--For Chrome/Android-->
+    <meta name="theme-color" content="#0059FF"> <!--For Chrome/Android or use orange here #FFA500-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0059FF"> <!--For Safari/iOS-->
+    <link rel="apple-touch-startup-image" href="img/startup.png"> <!--For Safari/iOS-->
+
+</head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>Left panel content goes here</p>
+          <i class="fa fa-gamepad fa-5x"></i>      
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <p>Right panel content goes here</p>
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <!-- Navbar inner for Index page-->
+          <div data-page="index" class="navbar-inner">
+            <!-- We have home navbar without left link-->
+            <div class="center sliding">PrimeTime Employees</div>
+            <div class="right">
+              <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            </div>
+          </div>
+          <!-- Navbar inner for Arcade Errors page-->
+          <div data-page="errors" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Arcade Error Reporting</div>
+          </div>
+          <div data-page="ccerrors" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">CC Error Reporting</div>
+          </div>
+          <div data-page="othererrors" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Misc. Error Reporting</div>
+          </div>
+          <!-- Navbar inner for Arcade Training page-->
+          <div data-page="training" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Arcade Training Checklist</div>
+          </div>
+          <!-- Navbar inner for Arcade Closing page-->
+          <div data-page="closing" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Arcade Closing Procedures</div>
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Index Page-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content">
+              <div class="content-block-title"><i class="fa fa-ticket"></i> Arcade Employees</div>
+              <div class="list-block">
+                <ul>
+                  <li><a href="#errors" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title"><i class="fa fa-exclamation-circle"></i> Error Reporting</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#training" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-check-circle"></i> Training Checklist</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#closing" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-clock-o"></i> Closing Procedures</div>
+                        </div>
+                      </div></a></li>
+                </ul>
+              </div>              
+              <div class="content-block-title"><i class="fa fa-dashboard"></i> Control Counter Employees</div>
+              <div class="list-block">
+                <ul>
+                  <li><a href="#ccerrors" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title"><i class="fa fa-exclamation-circle"></i> Error Reporting</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#training" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-check-circle"></i> Training Checklist</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#closing" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-clock-o"></i> Closing Procedures</div>
+                        </div>
+                      </div></a></li>
+                </ul>
+              </div>              
+              <div class="content-block-title"><i class="fa fa-globe"></i> Everything Else</div>
+              <div class="list-block">
+                <ul>
+                  <li><a href="#othererrors" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title"><i class="fa fa-exclamation-circle"></i> Misc. Error Reporting</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#training" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-check-circle"></i> Link2</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#closing" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-clock-o"></i> Link3</div>
+                        </div>
+                      </div></a></li>
+                </ul>
+              </div>              
+              <div class="content-block">
+                <div class="content-block-inner">
+                  <p>Made by StarbucksTech. Which is really just one guy working for the fun of it because learning new things is fun.</p>
+                </div>
+              </div>
+              <div class="list-block">
+                <ul>
+                  <li>
+                    <a href="https://whentowork.com/mob/logins.htm" class="external item-link list-button">W2W Mobile</a>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/groups/228830403837342/" class="external item-link list-button">FB Group</a>
+                  </li>
+                </ul>
+              </div>
+            </div> <!-- End Scrollable page content-->
+          </div>
+          <!-- Arcade Errors Page-->
+          <div data-page="errors" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <p><a href="https://docs.google.com/forms/d/1ELefS6RUAT2ceAwQKHHlg8KzJkOuHR_Fkn--Hg_S3gA/viewform" class="external button button-big">Laser Tag Errors</a></p>
+                <p><a href="https://docs.google.com/forms/d/1xvqciUTfL4_HCS3b0dIbKgQMV_fOlrqS5WB8Y5im7ao/viewform" class="external button button-big">Bumper Car Errors</a></p>
+                <p><a href="https://docs.google.com/forms/d/1kKL8uH2d-YBkSzPdk0cmieosCYD0cweiYnWBrqN3ID8/viewform" class="external button button-big">All Other Arcade Errors</a></p>
+                <p>These links take you away from this app and will immediately notifi the appropriate mantinance.</p>
+              </div>
+            </div>
+          </div><!-- End Arcade Errors Page-->
+          <!-- CC Errors Page-->
+          <div data-page="ccerrors" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <p><a href="#" class="external button button-round">Bowling Errors</a></p>
+                <p><a href="#" class="external button button-round">NASCAR Errors</a></p>
+                <p><a href="#" class="external button button-round">All Other CC Errors</a></p>
+                <p>These links take you away from this app and will immediately notify the appropriate mantinance.</p>
+              </div>
+            </div>
+          </div><!-- End CC Errors Page-->
+          <!-- Micelaneous Errors Page-->
+          <div data-page="othererrors" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <p><a href="#" class="external button button-round">All Other Errors</a></p>
+                <p>This link takes you away from this app and immediately notifies the appropriate mantinance.</p>
+              </div>
+            </div>
+          </div><!-- End CC Errors Page-->
+          <!-- Arcade Training Page-->
+          <div data-page="training" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <div class="list-block accordion-list">
+                  <ul>
+                    <li class="accordion-item"><a href="#" class="item-content item-link">
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-flash fa-lg"></i> Laser Tag</div>
+                        </div></a>
+                      <div class="accordion-item-content">
+                        <div class="content-block">
+                          <p><i class="fa fa-check-square-o"></i> Watch video, swipe cards, help them put on vests.</p>
+                          <p><i class="fa fa-check-square-o"></i> Reiterate no running, no physical contact.</p>
+                          <p><i class="fa fa-check-square-o"></i> Kick out if necessary.</p>
+                          <p><i class="fa fa-check-square-o"></i> Stay inside the ENTIRE time for insurance reasons and making sure no one gets hurt.</p>
+                          <p><i class="fa fa-check-square-o"></i> Scores are outside on the big TV.</p>
+                          <p><i class="fa fa-check-square-o"></i> Make the vests look nice before the next group because our customers like it when things look nice.</p>
+                        </div>
+                      </div>
+                    </li>                      
+                    <li class="accordion-item"><a href="#" class="item-content item-link">
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-car fa-lg"></i> Bumper Cars</div>
+                        </div></a>
+                      <div class="accordion-item-content">
+                        <div class="content-block">
+                          <p><i class="fa fa-check-square-o"></i> Height minimum.</p>
+                          <p><i class="fa fa-check-square-o"></i> Push go to go once everyone has the strap on correctly.</p>
+                          <p><i class="fa fa-check-square-o"></i> Push stop if you really need to.</p>
+                        </div>
+                      </div>
+                    </li>                      
+                    <li class="accordion-item"><a href="#" class="item-content item-link">
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-rocket fa-lg"></i> XD Theater</div>
+                        </div></a>
+                      <div class="accordion-item-content">
+                        <div class="content-block">
+                            <p><i class="fa fa-check-square-o"></i> Swipe cards and check height minimum.</p>
+                            <p><i class="fa fa-check-square-o"></i> Ask which movie they want to watch.</p>
+                            <p><i class="fa fa-check-square-o"></i> Give them glasses.</p>
+                            <p><i class="fa fa-check-square-o"></i> After they are all buckled up, start the movie and make sure all their seats move.</p>
+                            <p><i class="fa fa-check-square-o"></i> Clean the dirty glasses while you wait for them to finish.</p>
+                            <p><i class="fa fa-check-square-o"></i> Open the door and turn on the light as they finish.</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="accordion-item"><a href="#" class="item-content item-link">
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-trophy fa-lg"></i> Redemption</div>
+                        </div></a>
+                      <div class="accordion-item-content">
+                        <div class="content-block">
+                          <p><i class="fa fa-check-square-o"></i> Try not to grab things off of the wall.
+                          <p><i class="fa fa-check-square-o"></i> Scan everything!!</p>
+                          <p><i class="fa fa-check-square-o"></i> Count WOZ coins.</p>
+                          <p><i class="fa fa-check-square-o"></i> Keep the glass clean.</p>
+                          <p><i class="fa fa-check-square-o"></i> No drinks on the XD counter.</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="accordion-item"><a href="#" class="item-content item-link">
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-ticket fa-lg"></i> Refilling Tickets</div>
+                        </div></a>
+                      <div class="accordion-item-content">
+                        <div class="content-block">
+                          <p><i class="fa fa-check-square-o"></i> 3 different ticket dispenser types
+                          <p><i class="fa fa-check-square-o"></i> Filling tickets in each type.</p>
+                          <p><i class="fa fa-check-square-o"></i> Lick it and stick it!!!!!!</p>
+                          <p><i class="fa fa-check-square-o"></i> Fixing jams.</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="accordion-item"><a href="#" class="item-content item-link">
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-ticket fa-lg"></i> Ticket Counter</div>
+                        </div></a>
+                      <div class="accordion-item-content">
+                        <div class="content-block">
+                          <p><i class="fa fa-check-square-o"></i> Watch for the red light on top of the machine.</p>
+                          <p><i class="fa fa-check-square-o"></i> Fixing jams.</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Arcade Training Page-->
+
+          <!-- Closing Page-->
+          <div data-page="closing" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <div class="list-block">
+                  <ul>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input type="text" placeholder="Select date" readonly id="calendar-date-format">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>  
+              <div class="list-block">
+                <ul>
+                  <li><a href="#arcadeclosing1" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-check"></i> Things that are done</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#arcadeclosing2" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-close"></i> Things that are NOT done</div>
+                        </div>
+                      </div></a></li>
+                </ul>
+              </div>
+<div class="content-block">
+  <div class="row">
+    <div class="col-50"><a href="#" class="back button button-big button-fill color-red">Cancel</a></div>
+    <div class="col-50">
+      <input type="submit" value="Submit" class="button button-big button-fill color-green">
+    </div>
+  </div>
+</div>
+            </div>
+          </div>
+          <!-- Arcade Closing Page 1-->
+          <div data-page="arcadeclosing1" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <p></p>
+              </div>
+            </div>
+          </div><!-- End Arcade Closing Page 1-->
+          <!-- Arcade Closing Page 2-->
+          <div data-page="arcadeclosing2" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <p>Choose a thing that you are doing and sign it off.</p>
+              </div>
+            </div>
+          </div><!-- End Arcade Closing Page 2-->
+
+
+        </div>
+        <!-- Bottom Toolbar-->
+        <div class="toolbar">
+          <div class="toolbar-inner"><a href="#" data-panel="left" class="link open-panel">Left Panel</a><a href="#" class="link open-panel">Right Panel</a></div>
+        </div>
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="dist/js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>
