@@ -1,6 +1,7 @@
 // Initialize your app
 var myApp = new Framework7({
-    animateNavBackIcon:true
+    animateNavBackIcon:true,
+    swipePanel: 'left'
 });
 
 // Export selectors engine
@@ -17,4 +18,8 @@ var mainView = myApp.addView('.view-main', {
 var calendarDateFormat = myApp.calendar({
     input: '#calendar-date-format',
     dateFormat: 'DD, MM dd, yyyy'
-});   
+});
+
+if (!myApp.device.webView) {
+	myApp.alert('Add this app to your homescreen! This message will not stop appearing until you do.','Yo!');
+};

@@ -21,7 +21,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
 
     <meta name="application-name" content="iPT Web App">
@@ -34,18 +34,18 @@
     <!-- Path to the font awesome-->
     <link rel="stylesheet" href="dist/css/font-awesome.min.css">
 
-    <!--Not sure if these work yet-->
-    <link rel="apple-touch-icon" href="img/Icon-60@2x.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="img/Icon-60@3x.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="img/Icon-76.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="img/Icon-76@2x.png" />
-    <link rel="apple-touch-icon" sizes="58x58" href="img/Icon-Small@2x.png" />
-    <link rel="icon" sizes="192x192" href="img/icon2.png"> <!--For Chrome/Android-->
+    <link rel="apple-touch-icon" href="img/ios/AppIcon.appiconset/Icon-60@2x.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/ios/AppIcon.appiconset/Icon-60@3x.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="img/ios/AppIcon.appiconset/Icon-76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="img/ios/AppIcon.appiconset/Icon-76@2x.png" />
+    <link rel="apple-touch-icon" sizes="58x58" href="img/ios/AppIcon.appiconset/Icon-Small@2x.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="128x128" href="img/icon128.png">
+    <link rel="icon" sizes="192x192" href="img/icon192.png"> <!--For Chrome/Android-->
+    <link rel="icon" sizes="128x128" href="img/icon128.png"> <!--For Chrome/Android-->
 
     <link rel="manifest" href="manifest.json"> <!--For Chrome/Android-->
     <meta name="theme-color" content="#0059FF"> <!--For Chrome/Android or use orange here #FFA500-->
-    <meta name="apple-mobile-web-app-status-bar-style" content="#0059FF"> <!--For Safari/iOS-->
-    <link rel="apple-touch-startup-image" href="img/startup.png"> <!--For Safari/iOS-->
+    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="#0059FF"> <!--For Safari/iOS--> 
 
 </head>
   <body>
@@ -86,8 +86,9 @@
     <div class="panel panel-right panel-cover">
       <div class="content-block">
         <p>
-          Link to first time page! <a href="#first-time">first time</a>.       
+          Link to first time page! <a href="#first-time" onclick="myApp.closePanel()">first time</a>.       
         </p>
+        <img src="img/icon128.png">
       </div>
     </div>
     <!-- Views-->
@@ -327,7 +328,7 @@
                 <p><a href="https://docs.google.com/forms/d/1ELefS6RUAT2ceAwQKHHlg8KzJkOuHR_Fkn--Hg_S3gA/viewform" class="external button button-round">Laser Tag</a></p>
                 <p><a href="https://docs.google.com/forms/d/1xvqciUTfL4_HCS3b0dIbKgQMV_fOlrqS5WB8Y5im7ao/viewform" class="external button button-round">Bumper Car</a></p>
                 <p><a href="https://docs.google.com/forms/d/1kKL8uH2d-YBkSzPdk0cmieosCYD0cweiYnWBrqN3ID8/viewform" class="external button button-round">All Other Arcade Errors</a></p>
-                <p>These links take you away from this app and will immediately notifi the appropriate mantinance.</p>
+                <p>These links take you away from this app and will immediately notify the appropriate maintenance</p>
               </div>
             </div>
           </div><!-- End Arcade Errors Page-->
@@ -338,7 +339,7 @@
                 <p><a href="https://docs.google.com/forms/d/1I4lwAXTSL7qHhsyLCPykJUKAqnm1tYKG9HER0dKv1HI/viewform" class="external button button-round">Bowling</a></p>
                 <p><a href="https://docs.google.com/forms/d/19cl96PkfDnZAhPI3P3rNfoh9XwHmH7Ox0XidlDK_rm0/viewform" class="external button button-round">NASCAR</a></p>
                 <p><a href="https://docs.google.com/forms/d/1kXge1fOqsWh_dVjO1OGUDk59iJC6ji61kiw20qhFa5Y/viewform" class="external button button-round">All Other CC Errors</a></p>
-                <p>These links take you away from this app and will immediately notify the appropriate mantinance.</p>
+                <p>These links take you away from this app and will immediately notify the appropriate maintenance</p>
               </div>
             </div>
           </div><!-- End CC Errors Page-->
@@ -349,7 +350,7 @@
                 <p><a href="https://docs.google.com/forms/d/12deoaphId_G6P1xKA3HtcvAZDRv34CJPzKz3MtqHPxQ/viewform" class="external button button-round">Go Carts</a></p>
                 <p><a href="https://docs.google.com/forms/d/1auvg7Jil8lsTxwevRJ5lG7UXewNEQz4zBxpFhwLi-iw/viewform" class="external button button-round">Batting Cage</a></p>
                 <p><a href="https://docs.google.com/forms/d/1OSwjgVnmHK8uTk6HhwMIgeBbatEcYaIgXM_ns9d3ibw/viewform" class="external button button-round">All Other Errors</a></p>
-                <p>This link takes you away from this app and immediately notifies the appropriate mantinance.</p>
+                <p>This link takes you away from this app and immediately notifies the appropriate maintenance</p>
               </div>
             </div>
           </div><!-- End CC Errors Page-->
@@ -680,7 +681,7 @@
           <div data-page="promos" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <div class="content-block-title"><i class="fa fa-star"></i> UNLMITED PASS <i class="fa fa-star"></i></div>
+                <div class="content-block-title"><i class="fa fa-star"></i> UNLIMITED PASS <i class="fa fa-star"></i></div>
                 <div class="card">
                   <div class="card-content">
                     <div class="card-content-inner">$29.99 per person gets them a lot of stuff that you should convince them is worth the $29.99 a person.</div>
@@ -758,7 +759,7 @@
                 <div class="content-block-title"><i class="fa fa-exclamation-circle"></i> Error Reporting!</div>
                 <div class="card">
                   <div class="card-content">
-                    <div class="card-content-inner">Each section of PrimeTime now has online error tracking. <br> This means managers can get instant notifications when bowling lanes brake, when arcade games won't turn on and when batting cages need assistance.</div>
+                    <div class="card-content-inner">Each section of PrimeTime now has online error tracking. <br> This means managers can get instant notifications when bowling lanes break, when arcade games won't turn on and when batting cages need assistance.</div>
                   </div>
                 </div>
                 <div class="content-block-title"><i class="fa fa-clock-o"></i> Closing Procedures!</div>
