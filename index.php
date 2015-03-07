@@ -366,6 +366,7 @@
                         </div></a>
                       <div class="accordion-item-content">
                         <div class="content-block">
+                          <p><i class="fa fa-check-square-o color-red"></i> DO NOT TOUCH THE COMPUTER!!!</p>
                           <p><i class="fa fa-check-square-o color-orange"></i> Watch video, swipe cards, help them put on vests.</p>
                           <p><i class="fa fa-check-square-o color-orange"></i> Reiterate no running, no physical contact.</p>
                           <p><i class="fa fa-check-square-o color-orange"></i> Kick out if necessary.</p>
