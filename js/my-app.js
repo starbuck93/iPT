@@ -20,6 +20,6 @@ var calendarDateFormat = myApp.calendar({
     dateFormat: 'DD, MM dd, yyyy'
 });
 
-if (!myApp.device.webView) {
-	myApp.alert('Add this app to your homescreen! This message will not stop appearing until you do.','Yo!');
-};
+// if (!myApp.device.webView) {
+// 	myApp.alert('Add this app to your homescreen! This message will not stop appearing until you do.','Yo!');
+// };
