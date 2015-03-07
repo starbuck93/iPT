@@ -1,3 +1,20 @@
+<?php
+    //http://stackoverflow.com/questions/5722990/first-time-visitor-cookie
+      //http://stackoverflow.com/questions/3079925/display-welcome-message-to-first-time-visitors
+    // Top of the page, before sending out ANY output to the page.
+    $user_is_first_timer = !isset( $_COOKIE["FirstTimer"] );
+
+    // Set the cookie so that the message doesn't show again
+    setcookie( "FirstTimer", 1, strtotime( '+1 year' ) );
+
+    $name = 0;
+    
+    if(isset($_COOKIE["username"]))
+      $name = $_COOKIE["username"];
+    else $name = 0;
+?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -39,14 +56,38 @@
     <!-- Left panel with reveal effect-->
     <div class="panel panel-left panel-reveal">
       <div class="content-block">
-        <p>Left panel content goes here</p>
-        <span style="display: block !important; width: 180px; text-align: center; font-family: sans-serif; font-size: 12px;"><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:79601.1.99999&bannertypeclick=wu_simplewhite" title="Abilene, Texas Weather Forecast" target="_blank"><img src="http://weathersticker.wunderground.com/weathersticker/cgi-bin/banner/ban/wxBanner?bannertype=wu_simplewhite&airportcode=KABI&ForcedCity=Abilene&ForcedState=TX&zip=79601&language=EN" alt="Find more about Weather in Abilene, TX" width="160" /></a><br><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:79601.1.99999&bannertypeclick=wu_simplewhite" title="Get latest Weather Forecast updates" style="font-family: sans-serif; font-size: 12px" target="_blank">Click for weather forecast</a></span>      
+        <?php if(!isset($_COOKIE["username"])) { ?>
+        <form method="POST" action="username.php">
+          <input type="hidden" name="setName" value="true">
+          <p>Type in your name here and I'll save it for you for use in the closing procedures.</p>
+          <div class="list-block">
+            <ul>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <input type="text" placeholder="Your name" name="username">
+                    </div>
+                  </div>
+                </div>
+              </li>         
+            </ul>
+          </div> 
+          <input type="submit" value="Submit" class="button button-big button-fill color-green">
+        </form>
+        <?php } else { ?>
+        <p>Welcome back, <?php print($name);?>. Want to change your username? <br> Too bad.</p>
+        <?php } ?>
+        <br>
+        <span style="display: block !important; width: 180px; text-align: center; font-family: sans-serif; font-size: 12px;"><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:79601.1.99999&bannertypeclick=wu_simplewhite" title="Abilene, Texas Weather Forecast" target="_blank" class="external"><img src="http://weathersticker.wunderground.com/weathersticker/cgi-bin/banner/ban/wxBanner?bannertype=wu_simplewhite&airportcode=KABI&ForcedCity=Abilene&ForcedState=TX&zip=79601&language=EN" alt="Find more about Weather in Abilene, TX" width="160" /></a><br><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:79601.1.99999&bannertypeclick=wu_simplewhite" title="Get latest Weather Forecast updates" style="font-family: sans-serif; font-size: 12px" target="_blank" class="external">Click for weather forecast</a></span>      
       </div>
     </div>
     <!-- Right panel with cover effect-->
     <div class="panel panel-right panel-cover">
       <div class="content-block">
-        <p>Right panel content goes here</p>
+        <p>
+          Link to first time page! <a href="#first-time">first time</a>.       
+        </p>
       </div>
     </div>
     <!-- Views-->
@@ -54,7 +95,7 @@
       <!-- Your main view, should have "view-main" class-->
       <div class="view view-main">
         <!-- Top Navbar-->
-        <div class="navbar">
+        <div class="navbar color-orange border-blue">
           <!-- Navbar inner for Index page-->
           <div data-page="index" class="navbar-inner">
             <!-- We have home navbar without left link-->
@@ -121,6 +162,11 @@
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
             <div class="center sliding">Promotions</div>
           </div>
+<!-- Navbar inner for First Time page-->
+          <div data-page="first-time" class="navbar-inner cached">
+            <!-- <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div> -->
+            <div class="center sliding">How-To</div>
+          </div>
         </div>
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
         <div class="pages navbar-through toolbar-through">
@@ -128,19 +174,63 @@
           <div data-page="index" class="page">
             <!-- Scrollable page content-->
             <div class="page-content">
-              <div class="content-block-title"><i class="fa fa-ticket"></i> Arcade Employees</div>
+              <?php if( $user_is_first_timer ): ?>
+                <div class="content-block">
+                  <div class="content-block-inner">
+                    <p></p>
+                    <h2>Hello, first time user!!<br> <a href="#first-time"><i class="fa fa-info-circle color-blue"></i> Click Here!</a></h2>
+                  </div>
+                </div>
+              <?php endif; ?> 
+              <?php if(!isset($_COOKIE["username"])) { ?>
+              <div class="content-block-title">oh, hi... who are you?</div>
+              <div class="card">
+                <div class="card-content">
+                  <div class="card-content-inner">
+                    <form method="POST" action="username.php">
+                      <input type="hidden" name="setName" value="true">
+                      <p>Type in your name here so I can make good use of it.</p>
+                      <div class="list-block">
+                        <ul>
+                          <li>
+                            <div class="item-content">
+                              <div class="item-inner">
+                                <div class="item-input">
+                                  <input type="text" placeholder="Your name" name="username">
+                                </div>
+                              </div>
+                            </div>
+                          </li>         
+                        </ul>
+                      </div> 
+                      <input type="submit" value="Submit" class="button button-fill color-green">
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <?php } else { ?>
+
+              <div class="content-block-title">Hey, <?php print($name);?>!</div>
+              <div class="card">
+                <div class="card-content">
+                  <div class="card-content-inner">Welcome back, <?php print($name);?>. Want to change your username? <br> Well, I have no idea how to.</div>
+                </div>
+              </div>
+
+              <?php } ?>
+              <div class="content-block-title"><i class="fa fa-ticket color-blue"></i> Arcade Employees</div>
               <div class="list-block">
                 <ul>
                   <li><a href="#errors" class="item-link">
                       <div class="item-content">
                         <div class="item-inner"> 
-                          <div class="item-title"><i class="fa fa-exclamation-circle"></i> Error Reporting</div>
+                          <div class="item-title"><i class="fa fa-exclamation-circle color-red"></i> Error Reporting</div>
                         </div>
                       </div></a></li>
                   <li><a href="#training" class="item-link">
                       <div class="item-content"> 
                         <div class="item-inner">
-                          <div class="item-title"><i class="fa fa-check-circle"></i> Training Checklist</div>
+                          <div class="item-title"><i class="fa fa-check-circle color-yellow"></i> Training Checklist</div>
                         </div>
                       </div></a></li>
                   <li><a href="#closing" class="item-link">
@@ -151,25 +241,25 @@
                       </div></a></li>
                 </ul>
               </div>              
-              <div class="content-block-title"><i class="fa fa-dashboard"></i> Control Counter Employees</div>
+              <div class="content-block-title"><i class="fa fa-dashboard color-blue"></i> Control Counter Employees</div>
               <div class="list-block">
                 <ul>
                   <li><a href="#promos" class="item-link">
                       <div class="item-content">
                         <div class="item-inner"> 
-                          <div class="item-title"><i class="fa fa-usd"></i> Weekly Promotions</div>
+                          <div class="item-title"><i class="fa fa-usd color-green"></i> Weekly Promotions</div>
                         </div>
                       </div></a></li>
                   <li><a href="#ccerrors" class="item-link">
                       <div class="item-content">
                         <div class="item-inner"> 
-                          <div class="item-title"><i class="fa fa-exclamation-circle"></i> Error Reporting</div>
+                          <div class="item-title"><i class="fa fa-exclamation-circle color-red"></i> Error Reporting</div>
                         </div>
                       </div></a></li>
                   <li><a href="#cc-training" class="item-link">
                       <div class="item-content"> 
                         <div class="item-inner">
-                          <div class="item-title"><i class="fa fa-check-circle"></i> Training Checklist</div>
+                          <div class="item-title"><i class="fa fa-check-circle color-yellow"></i> Training Checklist</div>
                         </div>
                       </div></a></li>
                   <li><a href="#CCclosing" class="item-link">
@@ -180,22 +270,22 @@
                       </div></a></li>
                 </ul>
               </div>              
-              <div class="content-block-title"><i class="fa fa-globe"></i> Everything Else</div>
+              <div class="content-block-title"><i class="fa fa-globe color-blue"></i> Everything Else</div>
               <div class="list-block">
                 <ul>
                   <li><a href="#othererrors" class="item-link">
                       <div class="item-content">
                         <div class="item-inner"> 
-                          <div class="item-title"><i class="fa fa-exclamation-circle"></i> Misc. Error Reporting</div>
+                          <div class="item-title"><i class="fa fa-exclamation-circle color-red"></i> Misc. Error Reporting</div>
                         </div>
                       </div></a></li>
-                  <li><a href="#training" class="item-link">
+                  <li><a href="#" class="item-link">
                       <div class="item-content"> 
                         <div class="item-inner">
-                          <div class="item-title"><i class="fa fa-check-circle"></i> Link2</div>
+                          <div class="item-title"><i class="fa fa-check-circle color-yellow"></i> Link2</div>
                         </div>
                       </div></a></li>
-                  <li><a href="#closing" class="item-link">
+                  <li><a href="#" class="item-link">
                       <div class="item-content"> 
                         <div class="item-inner">
                           <div class="item-title"><i class="fa fa-clock-o"></i> Link3</div>
@@ -204,17 +294,17 @@
                 </ul>
               </div>              
               <div class="content-block">
-                <div class="content-block-inner">
+                <div class="content-block-inner bg-lightblue border-orange">
                   <p>Made by StarbucksTech. Which is really just one guy working for the fun of it because learning new things is fun.</p>
                 </div>
               </div>
               <div class="list-block">
                 <ul>
                   <li>
-                    <a href="https://whentowork.com/mob/logins.htm" class="external item-link list-button">W2W Mobile</a>
+                    <a href="https://whentowork.com/mob/logins.htm" class="external item-link list-button">WhenToWork Mobile</a>
                   </li>
                   <li>
-                    <a href="https://www.facebook.com/groups/228830403837342/" class="external item-link list-button">FB Group</a>
+                    <a href="https://www.facebook.com/groups/228830403837342/" class="external item-link list-button">Facebook Group</a>
                   </li>
                 </ul>
               </div>
@@ -235,9 +325,9 @@
           <div data-page="ccerrors" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <p><a href="#" class="external button button-round">Bowling Errors</a></p>
-                <p><a href="#" class="external button button-round">NASCAR Errors</a></p>
-                <p><a href="#" class="external button button-round">All Other CC Errors</a></p>
+                <p><a href="#" class="external button button-big">Bowling Errors</a></p>
+                <p><a href="#" class="external button button-big">NASCAR Errors</a></p>
+                <p><a href="#" class="external button button-big">All Other CC Errors</a></p>
                 <p>These links take you away from this app and will immediately notify the appropriate mantinance.</p>
               </div>
             </div>
@@ -263,12 +353,12 @@
                         </div></a>
                       <div class="accordion-item-content">
                         <div class="content-block">
-                          <p><i class="fa fa-check-square-o"></i> Watch video, swipe cards, help them put on vests.</p>
-                          <p><i class="fa fa-check-square-o"></i> Reiterate no running, no physical contact.</p>
-                          <p><i class="fa fa-check-square-o"></i> Kick out if necessary.</p>
-                          <p><i class="fa fa-check-square-o"></i> Stay inside the ENTIRE time for insurance reasons and making sure no one gets hurt.</p>
-                          <p><i class="fa fa-check-square-o"></i> Scores are outside on the big TV.</p>
-                          <p><i class="fa fa-check-square-o"></i> Make the vests look nice before the next group because our customers like it when things look nice.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Watch video, swipe cards, help them put on vests.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Reiterate no running, no physical contact.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Kick out if necessary.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Stay inside the ENTIRE time for insurance reasons and making sure no one gets hurt.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Scores are outside on the big TV.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Make the vests look nice before the next group because our customers like it when things look nice.</p>
                         </div>
                       </div>
                     </li>                      
@@ -278,9 +368,9 @@
                         </div></a>
                       <div class="accordion-item-content">
                         <div class="content-block">
-                          <p><i class="fa fa-check-square-o"></i> Height minimum.</p>
-                          <p><i class="fa fa-check-square-o"></i> Push go to go once everyone has the strap on correctly.</p>
-                          <p><i class="fa fa-check-square-o"></i> Push stop if you really need to.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Height minimum.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Push go to go once everyone has the strap on correctly.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Push stop if you really need to.</p>
                         </div>
                       </div>
                     </li>                      
@@ -290,12 +380,12 @@
                         </div></a>
                       <div class="accordion-item-content">
                         <div class="content-block">
-                            <p><i class="fa fa-check-square-o"></i> Swipe cards and check height minimum.</p>
-                            <p><i class="fa fa-check-square-o"></i> Ask which movie they want to watch.</p>
-                            <p><i class="fa fa-check-square-o"></i> Give them glasses.</p>
-                            <p><i class="fa fa-check-square-o"></i> After they are all buckled up, start the movie and make sure all their seats move.</p>
-                            <p><i class="fa fa-check-square-o"></i> Clean the dirty glasses while you wait for them to finish.</p>
-                            <p><i class="fa fa-check-square-o"></i> Open the door and turn on the light as they finish.</p>
+                            <p><i class="fa fa-check-square-o color-orange"></i> Swipe cards and check height minimum.</p>
+                            <p><i class="fa fa-check-square-o color-orange"></i> Ask which movie they want to watch.</p>
+                            <p><i class="fa fa-check-square-o color-orange"></i> Give them glasses.</p>
+                            <p><i class="fa fa-check-square-o color-orange"></i> After they are all buckled up, start the movie and make sure all their seats move.</p>
+                            <p><i class="fa fa-check-square-o color-orange"></i> Clean the dirty glasses while you wait for them to finish.</p>
+                            <p><i class="fa fa-check-square-o color-orange"></i> Open the door and turn on the light as they finish.</p>
                         </div>
                       </div>
                     </li>
@@ -305,11 +395,11 @@
                         </div></a>
                       <div class="accordion-item-content">
                         <div class="content-block">
-                          <p><i class="fa fa-check-square-o"></i> Try not to grab things off of the wall.</p>
-                          <p><i class="fa fa-check-square-o"></i> Scan everything!!</p>
-                          <p><i class="fa fa-check-square-o"></i> Count WOZ coins.</p>
-                          <p><i class="fa fa-check-square-o"></i> Keep the glass clean.</p>
-                          <p><i class="fa fa-check-square-o"></i> No drinks on the XD counter.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Try not to grab things off of the wall.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Scan everything!!</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Count WOZ coins.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Keep the glass clean.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> No drinks on the XD counter.</p>
                         </div>
                       </div>
                     </li>
@@ -319,10 +409,10 @@
                         </div></a>
                       <div class="accordion-item-content">
                         <div class="content-block">
-                          <p><i class="fa fa-check-square-o"></i> 3 different ticket dispenser types</p>
-                          <p><i class="fa fa-check-square-o"></i> Filling tickets in each type.</p>
-                          <p><i class="fa fa-check-square-o"></i> Lick it and stick it!!!!!!</p>
-                          <p><i class="fa fa-check-square-o"></i> Fixing jams.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> 3 different ticket dispenser types</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Filling tickets in each type.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Lick it and stick it!!!!!!</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Fixing jams.</p>
                         </div>
                       </div>
                     </li>
@@ -332,8 +422,8 @@
                         </div></a>
                       <div class="accordion-item-content">
                         <div class="content-block">
-                          <p><i class="fa fa-check-square-o"></i> Watch for the red light on top of the machine.</p>
-                          <p><i class="fa fa-check-square-o"></i> Fixing jams.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Watch for the red light on top of the machine.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Fixing jams.</p>
                         </div>
                       </div>
                     </li>
@@ -355,12 +445,12 @@
                         </div></a>
                       <div class="accordion-item-content">
                         <div class="content-block">
-                          <p><i class="fa fa-check-square-o"></i> </p>
-                          <p><i class="fa fa-check-square-o"></i> </p>
-                          <p><i class="fa fa-check-square-o"></i> </p>
-                          <p><i class="fa fa-check-square-o"></i> </p>
-                          <p><i class="fa fa-check-square-o"></i> </p>
-                          <p><i class="fa fa-check-square-o"></i> </p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> </p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> </p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> </p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> </p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> </p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> </p>
                         </div>
                       </div>
                     </li>                      
@@ -370,9 +460,9 @@
                         </div></a>
                       <div class="accordion-item-content">
                         <div class="content-block">
-                          <p><i class="fa fa-check-square-o"></i> Height minimum.</p>
-                          <p><i class="fa fa-check-square-o"></i> Push go to go once everyone has the strap on correctly.</p>
-                          <p><i class="fa fa-check-square-o"></i> Push stop if you really need to.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Height minimum.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Push go to go once everyone has the strap on correctly.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Push stop if you really need to.</p>
                         </div>
                       </div>
                     </li>                      
@@ -382,8 +472,8 @@
                         </div></a>
                       <div class="accordion-item-content">
                         <div class="content-block">
-                            <p><i class="fa fa-check-square-o"></i> Blee.</p>
-                            <p><i class="fa fa-check-square-o"></i> Blue.</p>
+                            <p><i class="fa fa-check-square-o color-orange"></i> Blee.</p>
+                            <p><i class="fa fa-check-square-o color-orange"></i> Blue.</p>
 
                         </div>
                       </div>
@@ -394,8 +484,8 @@
                         </div></a>
                       <div class="accordion-item-content">
                         <div class="content-block">
-                          <p><i class="fa fa-check-square-o"></i> Stuff goes here.</p>
-                          <p><i class="fa fa-check-square-o"></i> And more stuff happens here.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> Stuff goes here.</p>
+                          <p><i class="fa fa-check-square-o color-orange"></i> And more stuff happens here.</p>
                         </div>
                       </div>
                     </li>
@@ -583,6 +673,45 @@
               </div>
             </div>
           </div><!-- End CC Promo Page-->
+          <!-- First Time Page-->
+          <div data-page="first-time" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <div class="content-block-title"><i class="fa fa-info-circle"></i> Check it out!</div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">Read these real quick and text me if you have any questions!</div>
+                  </div>
+                </div>
+                <div class="content-block-title"><i class="fa fa-smile-o"></i> Fill in your name</div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">Filling in your name will let us keep track of who's done what for closing procedures.</div>
+                  </div>
+                </div>
+                <div class="content-block-title"><i class="fa fa-exclamation-circle"></i> Error Reporting!</div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">Each section of PrimeTime now has online error tracking. This means managers can get instant notifications when bowling lanes brake, when arcade games won't turn on and when batting cages need assistance.</div>
+                  </div>
+                </div>
+                <div class="content-block-title"><i class="fa fa-clock-o"></i> Closing Procedures!</div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">Instead of writing your initals inside of a binder every time you wipe down the counters, now you'll type in your name once and mark off things as you do them every day. Managers in the morning can now see who did what the night before, before they even get to work.</div>
+                  </div>
+                </div>
+                <div class="content-block-title"><i class="fa fa-check-circle"></i> Training Checklists!</div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">The idea behind these is to remind people who are training of the rules that we know to follow and how to do the simple things.</div>
+                  </div>
+                </div>
+                <br>
+                <a href="javascript:history.go(0)" class="external button button-fill color-green">Click to go back.</a>
+              </div>
+            </div>
+          </div><!-- End First Time Page-->
         </div>
         <!-- Bottom Toolbar-->
         <div class="toolbar">
