@@ -743,6 +743,12 @@
                     <div class="card-content-inner">Read these real quick and text me if you have any questions!</div>
                   </div>
                 </div>
+                <div class="content-block-title"><i class="fa fa-mobile"></i> It's Like an App!</div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">Whether you're on iPhone or Android or Windows, you should add this to your homescreen for an App-like feel, with no storage being taken up.</div>
+                  </div>
+                </div>
                 <div class="content-block-title"><i class="fa fa-smile-o"></i> Fill in your name</div>
                 <div class="card">
                   <div class="card-content">
