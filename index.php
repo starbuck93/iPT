@@ -76,7 +76,7 @@
           <input type="submit" value="Submit" class="button button-big button-fill color-green">
         </form>
         <?php } else { ?>
-        <p>Welcome back, <?php print($name);?>. Want to change your username? <br> Too bad.</p>
+        <p>Welcome back, <?php print($name);?>. Want to change your username? <br> Too bad. <br> Here's the weather instead.</p>
         <?php } ?>
         <br>
         <span style="display: block !important; width: 180px; text-align: center; font-family: sans-serif; font-size: 12px;"><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:79601.1.99999&bannertypeclick=wu_simplewhite" title="Abilene, Texas Weather Forecast" target="_blank" class="external"><img src="http://weathersticker.wunderground.com/weathersticker/cgi-bin/banner/ban/wxBanner?bannertype=wu_simplewhite&airportcode=KABI&ForcedCity=Abilene&ForcedState=TX&zip=79601&language=EN" alt="Find more about Weather in Abilene, TX" width="160" /></a><br><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:79601.1.99999&bannertypeclick=wu_simplewhite" title="Get latest Weather Forecast updates" style="font-family: sans-serif; font-size: 12px" target="_blank" class="external">Click for weather forecast</a></span>      
@@ -162,6 +162,16 @@
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
             <div class="center sliding">Promotions</div>
           </div>
+<!-- Navbar inner for Sports page-->
+          <div data-page="sports" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">PT Sports</div>
+          </div>
+<!-- Navbar inner for BSP page-->
+          <div data-page="bsp" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Backstage Pass</div>
+          </div>
 <!-- Navbar inner for First Time page-->
           <div data-page="first-time" class="navbar-inner cached">
             <!-- <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div> -->
@@ -210,13 +220,13 @@
               </div>
               <?php } else { ?>
 
-              <div class="content-block-title">Hey, <?php print($name);?>!</div>
-              <div class="card">
+              <div class="content-block-title">Hey, <?php print($name);?>! <i class="fa fa-smile-o color-blue"></i></div>
+<!--               <div class="card">
                 <div class="card-content">
                   <div class="card-content-inner">Welcome back, <?php print($name);?>. Want to change your username? <br> Well, I have no idea how to.</div>
                 </div>
               </div>
-
+ -->
               <?php } ?>
               <div class="content-block-title"><i class="fa fa-ticket color-blue"></i> Arcade Employees</div>
               <div class="list-block">
@@ -279,16 +289,16 @@
                           <div class="item-title"><i class="fa fa-exclamation-circle color-red"></i> Misc. Error Reporting</div>
                         </div>
                       </div></a></li>
-                  <li><a href="#" class="item-link">
+                  <li><a href="#bsp" class="item-link">
                       <div class="item-content"> 
                         <div class="item-inner">
-                          <div class="item-title"><i class="fa fa-check-circle color-yellow"></i> Link2</div>
+                          <div class="item-title"><i class="fa fa-beer"></i> Backstage Pass Info</div>
                         </div>
                       </div></a></li>
-                  <li><a href="#" class="item-link">
+                  <li><a href="#sports" class="item-link">
                       <div class="item-content"> 
                         <div class="item-inner">
-                          <div class="item-title"><i class="fa fa-clock-o"></i> Link3</div>
+                          <div class="item-title"><i class="fa fa-futbol-o"></i> PT Sports Info</div>
                         </div>
                       </div></a></li>
                 </ul>
@@ -314,9 +324,9 @@
           <div data-page="errors" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <p><a href="https://docs.google.com/forms/d/1ELefS6RUAT2ceAwQKHHlg8KzJkOuHR_Fkn--Hg_S3gA/viewform" class="external button button-big">Laser Tag Errors</a></p>
-                <p><a href="https://docs.google.com/forms/d/1xvqciUTfL4_HCS3b0dIbKgQMV_fOlrqS5WB8Y5im7ao/viewform" class="external button button-big">Bumper Car Errors</a></p>
-                <p><a href="https://docs.google.com/forms/d/1kKL8uH2d-YBkSzPdk0cmieosCYD0cweiYnWBrqN3ID8/viewform" class="external button button-big">All Other Arcade Errors</a></p>
+                <p><a href="https://docs.google.com/forms/d/1ELefS6RUAT2ceAwQKHHlg8KzJkOuHR_Fkn--Hg_S3gA/viewform" class="external button button-round">Laser Tag</a></p>
+                <p><a href="https://docs.google.com/forms/d/1xvqciUTfL4_HCS3b0dIbKgQMV_fOlrqS5WB8Y5im7ao/viewform" class="external button button-round">Bumper Car</a></p>
+                <p><a href="https://docs.google.com/forms/d/1kKL8uH2d-YBkSzPdk0cmieosCYD0cweiYnWBrqN3ID8/viewform" class="external button button-round">All Other Arcade Errors</a></p>
                 <p>These links take you away from this app and will immediately notifi the appropriate mantinance.</p>
               </div>
             </div>
@@ -325,9 +335,9 @@
           <div data-page="ccerrors" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <p><a href="#" class="external button button-big">Bowling Errors</a></p>
-                <p><a href="#" class="external button button-big">NASCAR Errors</a></p>
-                <p><a href="#" class="external button button-big">All Other CC Errors</a></p>
+                <p><a href="https://docs.google.com/forms/d/1I4lwAXTSL7qHhsyLCPykJUKAqnm1tYKG9HER0dKv1HI/viewform" class="external button button-round">Bowling</a></p>
+                <p><a href="https://docs.google.com/forms/d/19cl96PkfDnZAhPI3P3rNfoh9XwHmH7Ox0XidlDK_rm0/viewform" class="external button button-round">NASCAR</a></p>
+                <p><a href="https://docs.google.com/forms/d/1kXge1fOqsWh_dVjO1OGUDk59iJC6ji61kiw20qhFa5Y/viewform" class="external button button-round">All Other CC Errors</a></p>
                 <p>These links take you away from this app and will immediately notify the appropriate mantinance.</p>
               </div>
             </div>
@@ -336,7 +346,9 @@
           <div data-page="othererrors" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <p><a href="#" class="external button button-round">All Other Errors</a></p>
+                <p><a href="https://docs.google.com/forms/d/12deoaphId_G6P1xKA3HtcvAZDRv34CJPzKz3MtqHPxQ/viewform" class="external button button-round">Go Carts</a></p>
+                <p><a href="https://docs.google.com/forms/d/1auvg7Jil8lsTxwevRJ5lG7UXewNEQz4zBxpFhwLi-iw/viewform" class="external button button-round">Batting Cage</a></p>
+                <p><a href="https://docs.google.com/forms/d/1OSwjgVnmHK8uTk6HhwMIgeBbatEcYaIgXM_ns9d3ibw/viewform" class="external button button-round">All Other Errors</a></p>
                 <p>This link takes you away from this app and immediately notifies the appropriate mantinance.</p>
               </div>
             </div>
@@ -538,6 +550,7 @@
                   </div>
                 </div>
               </div>
+              <p class="color-red">This page is a work in progress. For now, treat it like a checklist. Eventually, it will be a interactive list that will let you go back in time to check who did what.</p>
             </div>
           </div>
           <!-- Arcade Closing Page 1-->
@@ -579,6 +592,7 @@
               </div>
             </div>
           </div><!-- End Arcade Closing Page 2-->
+
           <!-- CC Closing Page-->
           <div data-page="CCclosing" class="page cached">
             <div class="page-content">
@@ -621,6 +635,7 @@
                   </div>
                 </div>
               </div>
+              <p class="color-red">This page is a work in progress. For now, treat it like a checklist. Eventually, it will be a interactive list that will let you go back in time to check who did what.</p>
             </div>
           </div> <!--End CC Closing Page-->
           <!-- CC Closing Page 1-->
@@ -665,14 +680,59 @@
           <div data-page="promos" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <p>Promos listed here!</p>
-                <p>UNLMITED PASS</p>
-                <p>Thursday Thunder</p>
-                <p>College Night</p>
-                <p>Laser Tag Night</p>
+                <div class="content-block-title"><i class="fa fa-star"></i> UNLMITED PASS <i class="fa fa-star"></i></div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">$29.99 per person gets them a lot of stuff that you should convince them is worth the $29.99 a person.</div>
+                  </div>
+                </div>
+                <div class="content-block-title"><i class="fa fa-flash"></i> Thursday Thunder <i class="fa fa-cloud"></i></div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">3 games of bowling with shoes included for $12 a person.</div>
+                  </div>
+                </div>
+                <div class="content-block-title">College Night</div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">Friday nights starting at 8pm <br> SUCH DEALS.</div>
+                  </div>
+                </div>
+                <div class="content-block-title">Backstage Pass Specials</div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">MON-TUES = $10 Unlimited <br> THUR = $ college students with ID <br> FRI Ladies $5/hour Guys $12/hour <br> SAT Book online for $12/hour <br> SUN Something!</div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div><!-- End CC Promo Page-->
+          </div><!-- End CC Promo Page -->
+
+          <!-- Sports Page-->
+          <div data-page="sports" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <p>If you are reading this and you know something about sports more than "Talk to Andrew or Wey" or <a href="http://abileneindoor.com" class="external">the website</a> please let me know.</p>
+              </div>
+            </div>
+          </div><!-- End Sports Page 1 -->
+
+          <!-- BSP Page -->
+          <div data-page="bsp" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <p class="color-black">You can book online. BYOB. Open 8pm-close everyday but Wednesday. <br>18+ ONLY!! <br>BEER AND WINE ONLY!!</p>
+                <div class="content-block-title">Backstage Pass Specials</div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">MON-TUES = $10 Unlimited <br> THUR = $ college students with ID <br> FRI Ladies $5/hour Guys $12/hour <br> SAT Book online for $12/hour <br> SUN Something!</div>
+                  </div>
+                </div>
+                <p>Here's the website for online booking: https://backstagepass.youcanbook.me/</p>
+              </div>
+            </div>
+          </div><!-- End BSP Page -->
+
           <!-- First Time Page-->
           <div data-page="first-time" class="page cached">
             <div class="page-content">
@@ -692,13 +752,13 @@
                 <div class="content-block-title"><i class="fa fa-exclamation-circle"></i> Error Reporting!</div>
                 <div class="card">
                   <div class="card-content">
-                    <div class="card-content-inner">Each section of PrimeTime now has online error tracking. This means managers can get instant notifications when bowling lanes brake, when arcade games won't turn on and when batting cages need assistance.</div>
+                    <div class="card-content-inner">Each section of PrimeTime now has online error tracking. <br> This means managers can get instant notifications when bowling lanes brake, when arcade games won't turn on and when batting cages need assistance.</div>
                   </div>
                 </div>
                 <div class="content-block-title"><i class="fa fa-clock-o"></i> Closing Procedures!</div>
                 <div class="card">
                   <div class="card-content">
-                    <div class="card-content-inner">Instead of writing your initals inside of a binder every time you wipe down the counters, now you'll type in your name once and mark off things as you do them every day. Managers in the morning can now see who did what the night before, before they even get to work.</div>
+                    <div class="card-content-inner">Instead of writing your initals inside of a binder every time you close, now you'll type in your name once and mark off things every night. Managers in the morning can now see who did what the night before, before they even get to work.</div>
                   </div>
                 </div>
                 <div class="content-block-title"><i class="fa fa-check-circle"></i> Training Checklists!</div>
