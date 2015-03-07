@@ -688,10 +688,28 @@
                     <div class="card-content-inner">$29.99 per person gets them a lot of stuff that you should convince them is worth the $29.99 a person.</div>
                   </div>
                 </div>
+                <div class="content-block-title">Military Sunday</div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">Last sunday of every month. Must show ID. $100 value! $39.99 includes a Large Pizza with 1 topping, $20 Arcade card, 4 people for one game of bowling or mini-golf.</div>
+                  </div>
+                </div>
+                <div class="content-block-title">PT4 Pack</div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">Must show coupon. $100 value! $39.99 includes a Large Pizza with 1 topping, $20 Arcade card, 4 people for one game of bowling or mini-golf.</div>
+                  </div>
+                </div>
                 <div class="content-block-title"><i class="fa fa-flash"></i> Thursday Thunder <i class="fa fa-cloud"></i></div>
                 <div class="card">
                   <div class="card-content">
                     <div class="card-content-inner">3 games of bowling with shoes included for $12 a person.</div>
+                  </div>
+                </div>
+                <div class="content-block-title">Unlimited Laser Tag</div>
+                <div class="card">
+                  <div class="card-content">
+                    <div class="card-content-inner">Wednesday nights for $12 a person. Starts at 7pm.</div>
                   </div>
                 </div>
                 <div class="content-block-title">College Night</div>
