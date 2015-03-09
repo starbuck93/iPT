@@ -364,6 +364,9 @@
               <div class="list-block">
                 <ul>
                   <li>
+                    <a href="http://www.primetimeabilene.com/information/" class="external item-link list-button">PrimeTime Hours</a>
+                  </li>
+                  <li>
                     <a href="https://whentowork.com/mob/logins.htm" class="external item-link list-button">WhenToWork Mobile</a>
                   </li>
                   <li>
