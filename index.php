@@ -12,6 +12,31 @@
     if(isset($_COOKIE["username"]))
       $name = $_COOKIE["username"];
     else $name = 0;
+
+    $arcade = array("Empty ticket stations and sweep them out.",
+                  "Wipe down counters and glass, get rid of any clutter.",
+                  "Restock redemption counter.",
+                  "Make sure every type of item has a visible ticket amount.",
+                  "Replace ALL stuffed animals on the walls.",
+                  "Make sure nothing is behind the white cabinet.",
+                  "Wipe down arcade tables and chairs.",
+                  "Sweep floors.",
+                  "Make sure all laser tag vests and remote are plugged in.",
+                  "Shut down Laser Tag and XD Theater.",
+                  "Vacuum Laser Tag and XD Theater.",
+                  "Declutter all counters and cabinets (including Laser Tag).",
+                  "Count Wizard of Oz coins and return to game.",
+                  "Empty Wizard of Oz drop trays.",
+                  "Stock all games with tickets.",
+                  "Make sure all games listed under your day have been cleaned.",
+                  "Record all game issues on the Arcade Error Reporting page.",
+                  "Turn off all breakers marked with an \"A\".",
+                  "Turn off lights by XD and merchandise closet.",
+                  "Return promo card and key to cabinet.",
+                  "Return walkie to manager."
+                  );
+
+
 ?>
 
 
@@ -110,9 +135,36 @@
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
             <div class="center sliding">Arcade Error Reporting</div>
           </div>
+<!-- Navbar inner for Arcade Reports page-->
+          <div data-page="report-laser" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Laser Tag Responses</div>
+          </div>
+<!-- Navbar inner for Arcade Reports page-->
+          <div data-page="report-bumper" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Bumper Car Responses</div>
+          </div>
+<!-- Navbar inner for Arcade Reports page-->
+          <div data-page="report-arcade-other" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Arcade Error Responses</div>
+          </div>
           <div data-page="ccerrors" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
             <div class="center sliding">CC Error Reporting</div>
+          </div>
+          <div data-page="report-bowling" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Bowling Error Responses</div>
+          </div>
+          <div data-page="report-nascar" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">NASCAR Error Responses</div>
+          </div>
+          <div data-page="report-cc" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">CC Error Responses</div>
           </div>
           <div data-page="othererrors" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
@@ -325,34 +377,112 @@
           <div data-page="errors" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <p><a href="https://docs.google.com/forms/d/1ELefS6RUAT2ceAwQKHHlg8KzJkOuHR_Fkn--Hg_S3gA/viewform" class="external button button-round">Laser Tag</a></p>
-                <p><a href="https://docs.google.com/forms/d/1xvqciUTfL4_HCS3b0dIbKgQMV_fOlrqS5WB8Y5im7ao/viewform" class="external button button-round">Bumper Car</a></p>
-                <p><a href="https://docs.google.com/forms/d/1kKL8uH2d-YBkSzPdk0cmieosCYD0cweiYnWBrqN3ID8/viewform" class="external button button-round">All Other Arcade Errors</a></p>
-                <p>These links take you away from this app and will immediately notify the appropriate maintenance</p>
+              <p class="buttons-row">
+                <a href="#" class="button button-round disabled">Report Error</a>
+                <a href="#" class="button button-round disabled">View Reports</a>
+              </p>
+              <p class="buttons-row">
+                <a href="https://docs.google.com/forms/d/1ELefS6RUAT2ceAwQKHHlg8KzJkOuHR_Fkn--Hg_S3gA/viewform?entry.1706758755=<?php print($name) ?>&entry.1287583411" class="external button button-round">Laser Tag</a>
+                <a href="#report-laser" class="button button-round">View Reports</a>
+              </p>
+              <p class="buttons-row">
+                <a href="https://docs.google.com/forms/d/1xvqciUTfL4_HCS3b0dIbKgQMV_fOlrqS5WB8Y5im7ao/viewform?entry.1706758755=<?php print($name) ?>&entry.1287583411" class="external button button-round">Bumper Cars</a>
+                <a href="#report-bumper" class="button button-round">View Reports</a>
+              </p>
+              <p class="buttons-row">
+                <a href="https://docs.google.com/forms/d/1kKL8uH2d-YBkSzPdk0cmieosCYD0cweiYnWBrqN3ID8/viewform?entry.403794036=<?php print($name) ?>&entry.493483913&entry.927264077" class="external button button-round">Everything Else</a>
+                <a href="#report-arcade-other" class="button button-round">View Reports</a>
+              </p>
+                <!-- <p><a href="https://docs.google.com/forms/d/1ELefS6RUAT2ceAwQKHHlg8KzJkOuHR_Fkn--Hg_S3gA/viewform" class="external button button-round">Laser Tag</a></p> -->
+                <!-- <p><a href="https://docs.google.com/forms/d/1xvqciUTfL4_HCS3b0dIbKgQMV_fOlrqS5WB8Y5im7ao/viewform" class="external button button-round">Bumper Car</a></p> -->
+                <!-- <p><a href="https://docs.google.com/forms/d/1kKL8uH2d-YBkSzPdk0cmieosCYD0cweiYnWBrqN3ID8/viewform" class="external button button-round">All Other Arcade Errors</a></p> -->
+                <p>Reporting errors take you away from this app and will immediately notify the appropriate maintenance.</p>
               </div>
             </div>
           </div><!-- End Arcade Errors Page-->
+          <!-- Laser Tag Responses Page-->
+          <div data-page="report-laser" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <a class="external button" href="https://docs.google.com/spreadsheets/d/1OPQ8mxKgRl-CdcODT4zRDmpX0sGsiqiekbzn2GPxuiI/pubhtml?gid=1440516788&amp;single=true&amp;widget=true&amp;headers=false">Link to reports</a>
+              </div>
+            </div>
+          </div><!-- End Laser Tag Responses Page-->
+          <!-- Bumper Car Responses Page-->
+          <div data-page="report-bumper" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+              <a class="external button" href="https://docs.google.com/spreadsheets/d/1_qIw7Dx1eejUxXsdvGF8Ihx0UVTUPTh-rvDx9V57ln0/pubhtml?gid=2014118529&amp;single=true&amp;widget=true&amp;headers=false">Link to reports</a>
+              </div>
+            </div>
+          </div><!-- End Bumper Car Responses Page-->
+          <!-- Other Arcade Responses Page-->
+          <div data-page="report-arcade-other" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+              <a class="external button" href="https://docs.google.com/spreadsheets/d/1rXWZ9D1fguyeKZSQKDqUPJLEhkOKXMyU-1KTdPHE6Kw/pubhtml?gid=845700485&amp;single=true&amp;widget=true&amp;headers=false">Link to reports</a>
+              </div>
+            </div>
+          </div><!-- End Other Arcade Responses Page-->
+
+
           <!-- CC Errors Page-->
           <div data-page="ccerrors" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <p><a href="https://docs.google.com/forms/d/1I4lwAXTSL7qHhsyLCPykJUKAqnm1tYKG9HER0dKv1HI/viewform" class="external button button-round">Bowling</a></p>
-                <p><a href="https://docs.google.com/forms/d/19cl96PkfDnZAhPI3P3rNfoh9XwHmH7Ox0XidlDK_rm0/viewform" class="external button button-round">NASCAR</a></p>
-                <p><a href="https://docs.google.com/forms/d/1kXge1fOqsWh_dVjO1OGUDk59iJC6ji61kiw20qhFa5Y/viewform" class="external button button-round">All Other CC Errors</a></p>
-                <p>These links take you away from this app and will immediately notify the appropriate maintenance</p>
-                <br>
-                <iframe src="https://docs.google.com/spreadsheets/d/1BKubrOQTf8QTsDPQNo_7D9-cBgasjs63kfpc5kGS19E/pubhtml?gid=1138065731&amp;single=true&amp;widget=true&amp;headers=false" seamless height="300px"></iframe>
+                <p class="buttons-row">
+                  <a href="#" class="button button-round disabled">Report Error</a>
+                  <a href="#" class="button button-round disabled">View Reports</a>
+                </p>
+                <p class="buttons-row">
+                  <a href="https://docs.google.com/forms/d/1I4lwAXTSL7qHhsyLCPykJUKAqnm1tYKG9HER0dKv1HI/viewform?entry.2050663756=<?php print($name) ?>&entry.1656903657" class="external button button-round">Bowling</a>
+                  <a href="#report-bowling" class="button button-round">View Reports</a>
+                </p>
+                <p class="buttons-row">
+                  <a href="https://docs.google.com/forms/d/19cl96PkfDnZAhPI3P3rNfoh9XwHmH7Ox0XidlDK_rm0/viewform?entry.2050663756=<?php print($name) ?>&entry.1656903657" class="external button button-round">NASCAR</a>
+                  <a href="#report-nascar" class="button button-round">View Reports</a>
+                </p>
+                <p class="buttons-row">
+                  <a href="https://docs.google.com/forms/d/1kXge1fOqsWh_dVjO1OGUDk59iJC6ji61kiw20qhFa5Y/viewform?entry.403794036=<?php print($name) ?>&entry.493483913&entry.927264077" class="external button button-round">Everything Else</a>
+                  <a href="#report-cc" class="button button-round">View Reports</a>
+                </p>
+                <p>Reporting errors take you away from this app and will immediately notify the appropriate maintenance.</p>
               </div>
             </div>
           </div><!-- End CC Errors Page-->
+          <!-- CC Responses Page-->
+          <div data-page="report-bowling" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <a class="external button" href="https://docs.google.com/spreadsheets/d/1BKubrOQTf8QTsDPQNo_7D9-cBgasjs63kfpc5kGS19E/pubhtml?gid=1138065731&amp;single=true&amp;widget=true&amp;headers=false">Link to reports</a>
+              </div>
+            </div>
+          </div><!-- End CC Responses Page-->
+          <!-- CC Responses Page-->
+          <div data-page="report-nascar" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <a class="external button" href="https://docs.google.com/spreadsheets/d/1X7-novVXksifsMY8YDuEfYV_EpfdXQwKWpsU_Ksq3PY/pubhtml?gid=395487223&amp;single=true&amp;widget=true&amp;headers=false">Link to reports</a>
+              </div>
+            </div>
+          </div><!-- End CC Responses Page-->
+          <!-- CC Responses Page-->
+          <div data-page="report-cc" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <a class="external button" href="https://docs.google.com/spreadsheets/d/1eCiut5vLN_xGZS-9Yai9xja89as30qCmTHnIsDJBlUM/pubhtml?gid=543316195&amp;single=true&amp;widget=true&amp;headers=false">Link to reports</a>
+              </div>
+            </div>
+          </div><!-- End CC Responses Page-->
+
           <!-- Micelaneous Errors Page-->
           <div data-page="othererrors" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <p><a href="https://docs.google.com/forms/d/12deoaphId_G6P1xKA3HtcvAZDRv34CJPzKz3MtqHPxQ/viewform" class="external button button-round">Go Carts</a></p>
-                <p><a href="https://docs.google.com/forms/d/1auvg7Jil8lsTxwevRJ5lG7UXewNEQz4zBxpFhwLi-iw/viewform" class="external button button-round">Batting Cage</a></p>
-                <p><a href="https://docs.google.com/forms/d/1OSwjgVnmHK8uTk6HhwMIgeBbatEcYaIgXM_ns9d3ibw/viewform" class="external button button-round">All Other Errors</a></p>
-                <p>This link takes you away from this app and immediately notifies the appropriate maintenance</p>
+                <p><a href="https://docs.google.com/forms/d/12deoaphId_G6P1xKA3HtcvAZDRv34CJPzKz3MtqHPxQ/viewform?entry.46989363=<?php print($name) ?>&entry.348250278" class="external button button-round">Go Carts</a></p>
+                <p><a href="https://docs.google.com/forms/d/1auvg7Jil8lsTxwevRJ5lG7UXewNEQz4zBxpFhwLi-iw/viewform?entry.2050663756=<?php print($name) ?>&entry.1656903657" class="external button button-round">Batting Cage</a></p>
+                <p><a href="https://docs.google.com/forms/d/1OSwjgVnmHK8uTk6HhwMIgeBbatEcYaIgXM_ns9d3ibw/viewform?entry.1960077983=<?php print($name) ?>&entry.1752541001&entry.1436979688" class="external button button-round">All Other Errors</a></p>
+                <p>Reporting errors takes you away from this app and immediately notifies the appropriate maintenance.</p>
               </div>
             </div>
           </div><!-- End CC Errors Page-->
@@ -522,7 +652,7 @@
                       <div class="item-content">
                         <div class="item-inner">
                           <div class="item-input">
-                            <input type="text" placeholder="Select date" readonly id="calendar-date-format">
+                            <input type="text" placeholder="Select a date" readonly id="calendar-date-format">
                           </div>
                         </div>
                       </div>
@@ -546,14 +676,6 @@
                       </div></a></li>
                 </ul>
               </div>
-              <div class="content-block">
-                <div class="row">
-                  <div class="col-50"><a href="#" class="back button button-big button-fill color-red">Cancel</a></div>
-                  <div class="col-50">
-                    <input type="submit" value="Submit" class="button button-big button-fill color-green">
-                  </div>
-                </div>
-              </div>
               <p class="color-red">This page is a work in progress. For now, treat it like a checklist. Eventually, it will be a interactive list that will let you go back in time to check who did what.</p>
             </div>
           </div>
@@ -570,6 +692,55 @@
             <div class="page-content">
               <div class="content-block">
                 <p>Choose a thing that you are doing and sign it off.</p>
+
+                <script type="text/javascript" language="javascript">// <![CDATA[
+                  function checkAll(formname, checktoggle)
+                  {
+                    var checkboxes = new Array(); 
+                    checkboxes = document[formname].getElementsByTagName('input');
+                   
+                    for (var i=0; i<checkboxes.length; i++)  {
+                      if (checkboxes[i].type == 'checkbox')   {
+                        checkboxes[i].checked = checktoggle;
+                      }
+                    }
+                  }
+                  </script>
+
+                <p class="buttons-row theme-orange">
+                  <a onclick="javascript:checkAll('arcadeChecks', true);" href="javascript:void();" class="button">check all</a>
+                  <a onclick="javascript:checkAll('arcadeChecks', false);" href="javascript:void();" class="button">uncheck all</a>
+                </p>
+
+                <div class="list-block">
+                  <form name="arcadeChecks" method="POST" action="closing.php">
+                    <input type="hidden" name="setArcade" value="true">
+                    <input type="hidden" name="username" value="<?php print($name) ?>">
+                    <ul>
+                      <?php for ($i=0; $i < 21; $i++) { ?>
+                      <li>
+                        <label class="label-checkbox item-content">
+                          <input type="checkbox" name="arcade-check[]" value="<?php print($arcade[$i]) ?>">
+                          <div class="item-media">
+                            <i class="icon icon-form-checkbox"></i>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title"><?php print($arcade[$i]) ?></div>
+                          </div>
+                        </label>
+                      </li>
+                      <?php } ?>
+                    </ul>
+                  </form>
+                </div>
+                <div class="row">            
+                  <div class="col-33"></div>
+                  <div class="col-33">
+                    <input type="submit" form="arcadeChecks" value="Submit" class="button button-big button-fill color-green">
+                  </div>
+                  <div class="col-33"></div>
+                </div>
+                <br>
                 <ul>
                   <li>Empty ticket stations and sweep them out.</li>
                   <li>Wipe down counters and glass, get rid of any clutter.</li>
@@ -607,7 +778,7 @@
                       <div class="item-content">
                         <div class="item-inner">
                           <div class="item-input">
-                            <input type="text" placeholder="Select date" readonly id="calendar-date-format">
+                            <input type="text" placeholder="Select a date" readonly id="calendar-date-format">
                           </div>
                         </div>
                       </div>
@@ -630,14 +801,6 @@
                         </div>
                       </div></a></li>
                 </ul>
-              </div>
-              <div class="content-block">
-                <div class="row">
-                  <div class="col-50"><a href="#" class="back button button-big button-fill color-red">Cancel</a></div>
-                  <div class="col-50">
-                    <input type="submit" value="Submit" class="button button-big button-fill color-green">
-                  </div>
-                </div>
               </div>
               <p class="color-red">This page is a work in progress. For now, treat it like a checklist. Eventually, it will be a interactive list that will let you go back in time to check who did what.</p>
             </div>
