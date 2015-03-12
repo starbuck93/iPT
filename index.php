@@ -1016,6 +1016,9 @@
                 <input type="Submit" class="button button-big button-green" name="submit" value="Submit Comments">
                 </form>               
               </div>
+              <div class="content-block">
+                <p>Yes, I really do get an email when you submit this.</p>
+              </div>
             </div>
           </div><!-- End Feedback Page -->
 

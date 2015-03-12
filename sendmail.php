@@ -20,7 +20,7 @@ $name = $_REQUEST['fullname'];
 	$headers   = array();
 	$headers[] = "MIME-Version: 1.0";
 	$headers[] = "Content-type: text/plain; charset=iso-8859-1";
-	$headers[] = "From: ".$_REQUEST['fullname']. " &#60;".$_REQUEST['email'].">";
+	$headers[] = "From: ".$_REQUEST['fullname']. " <".$_REQUEST['email'].">";
 	$headers[] = "Reply-To: ". $_REQUEST['email'];
 	$headers[] = "Subject: {$subject}";
 	$headers[] = "X-Mailer: PHP/".phpversion();
