@@ -974,7 +974,7 @@
                         <div class="item-media"><i class="icon icon-form-name"></i></div>
                         <div class="item-inner">
                           <div class="item-input">
-                            <input type="text" placeholder="Your name" name="fullname">
+                            <input type="text" value="<?php print($name) ?>" name="fullname">
                           </div>
                         </div>
                       </div>
