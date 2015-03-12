@@ -3,6 +3,13 @@
 // print($_REQUEST['subject'] . " " . $_REQUEST['email'] . " " . $_REQUEST['comments'] . " " . $_REQUEST['fullname']);
 // print("From: ".$_REQUEST['fullname']. " &#60;".$_REQUEST['email'].">");
 
+//keeping their email in a cookie
+
+if (!isset($_COOKIE["email"])) {
+	$email = $_POST["email"];
+	setcookie( "email", $email, strtotime('+1 year'));
+}
+
 
 // The message
 $message = $_REQUEST['comments'];

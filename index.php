@@ -964,7 +964,7 @@
                         <div class="item-media"><i class="fa fa-star"></i></div>
                         <div class="item-inner">
                           <div class="item-input">
-                            <input type="text" value="iPT Comments" name="subject">
+                            <input type="text" value="iPT Comments" name="subject" required>
                           </div>
                         </div>
                       </div>
@@ -974,7 +974,7 @@
                         <div class="item-media"><i class="icon icon-form-name"></i></div>
                         <div class="item-inner">
                           <div class="item-input">
-                            <input type="text" value="<?php print($name) ?>" name="fullname">
+                            <input type="text" value="<?php print($name) ?>" name="fullname" required>
                           </div>
                         </div>
                       </div>
@@ -984,7 +984,7 @@
                         <div class="item-media"><i class="icon icon-form-email"></i></div>
                         <div class="item-inner">
                           <div class="item-input">
-                            <input type="email" placeholder="Your E-mail" name="email">
+                            <input type="email" <?php if(isset($_COOKIE['email'])) print("value=\"".$_COOKIE['email'] . "\"")?> placeholder="Your E-mail" name="email" required>
                           </div>
                         </div>
                       </div>
@@ -995,7 +995,7 @@
                         <div class="item-media"><i class="icon icon-form-comment"></i></div>
                         <div class="item-inner">
                           <div class="item-input">
-                            <textarea placeholder="Comments" name="comments"></textarea>
+                            <textarea placeholder="Comments" name="comments" required></textarea>
                           </div>
                         </div>
                       </div>
