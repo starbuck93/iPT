@@ -36,7 +36,7 @@
                   "Return walkie to manager."
                   );
 
-
+  date_default_timezone_set('America/Chicago'); 
 ?>
 
 
@@ -321,18 +321,19 @@
               <div class="content-block-title"><i class="fa fa-dashboard color-blue"></i> Control Counter Employees</div>
               <div class="list-block">
                 <ul>
+                  <li><a href="#ccerrors" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title"><i class="fa fa-exclamation-circle color-red"></i> Error Reporting</div>
+                        </div>
+                      </div></a></li>                  
                   <li><a href="#promos" class="item-link">
                       <div class="item-content">
                         <div class="item-inner"> 
                           <div class="item-title"><i class="fa fa-usd color-green"></i> Weekly Promotions</div>
                         </div>
                       </div></a></li>
-                  <li><a href="#ccerrors" class="item-link">
-                      <div class="item-content">
-                        <div class="item-inner"> 
-                          <div class="item-title"><i class="fa fa-exclamation-circle color-red"></i> Error Reporting</div>
-                        </div>
-                      </div></a></li>
+
                   <li><a href="#cc-training" class="item-link">
                       <div class="item-content"> 
                         <div class="item-inner">
@@ -403,15 +404,15 @@
               </p>
               <p class="buttons-row">
                 <a href="https://docs.google.com/forms/d/1ELefS6RUAT2ceAwQKHHlg8KzJkOuHR_Fkn--Hg_S3gA/viewform?entry.1706758755=<?php print($name) ?>&entry.1287583411" class="external button button-round">Laser Tag</a>
-                <a href="#report-laser" class="button button-round">View Reports</a>
+                <a href="https://docs.google.com/spreadsheets/d/1OPQ8mxKgRl-CdcODT4zRDmpX0sGsiqiekbzn2GPxuiI/pubhtml?gid=1440516788&amp;single=true&amp;widget=true&amp;headers=false" class="external button button-round">View Reports</a>
               </p>
               <p class="buttons-row">
                 <a href="https://docs.google.com/forms/d/1xvqciUTfL4_HCS3b0dIbKgQMV_fOlrqS5WB8Y5im7ao/viewform?entry.1706758755=<?php print($name) ?>&entry.1287583411" class="external button button-round">Bumper Cars</a>
-                <a href="#report-bumper" class="button button-round">View Reports</a>
+                <a href="https://docs.google.com/spreadsheets/d/1_qIw7Dx1eejUxXsdvGF8Ihx0UVTUPTh-rvDx9V57ln0/pubhtml?gid=2014118529&amp;single=true&amp;widget=true&amp;headers=false" class="external button button-round">View Reports</a>
               </p>
               <p class="buttons-row">
                 <a href="https://docs.google.com/forms/d/1kKL8uH2d-YBkSzPdk0cmieosCYD0cweiYnWBrqN3ID8/viewform?entry.403794036=<?php print($name) ?>&entry.493483913&entry.927264077" class="external button button-round">Everything Else</a>
-                <a href="#report-arcade-other" class="button button-round">View Reports</a>
+                <a href="https://docs.google.com/spreadsheets/d/1rXWZ9D1fguyeKZSQKDqUPJLEhkOKXMyU-1KTdPHE6Kw/pubhtml?gid=845700485&amp;single=true&amp;widget=true&amp;headers=false" class="external button button-round">View Reports</a>
               </p>
                 <!-- <p><a href="https://docs.google.com/forms/d/1ELefS6RUAT2ceAwQKHHlg8KzJkOuHR_Fkn--Hg_S3gA/viewform" class="external button button-round">Laser Tag</a></p> -->
                 <!-- <p><a href="https://docs.google.com/forms/d/1xvqciUTfL4_HCS3b0dIbKgQMV_fOlrqS5WB8Y5im7ao/viewform" class="external button button-round">Bumper Car</a></p> -->
@@ -424,7 +425,7 @@
           <div data-page="report-laser" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <a class="external button" href="https://docs.google.com/spreadsheets/d/1OPQ8mxKgRl-CdcODT4zRDmpX0sGsiqiekbzn2GPxuiI/pubhtml?gid=1440516788&amp;single=true&amp;widget=true&amp;headers=false">Link to reports</a>
+                <a class="external button" href="">Link to reports</a>
               </div>
             </div>
           </div><!-- End Laser Tag Responses Page-->
@@ -432,7 +433,7 @@
           <div data-page="report-bumper" class="page cached">
             <div class="page-content">
               <div class="content-block">
-              <a class="external button" href="https://docs.google.com/spreadsheets/d/1_qIw7Dx1eejUxXsdvGF8Ihx0UVTUPTh-rvDx9V57ln0/pubhtml?gid=2014118529&amp;single=true&amp;widget=true&amp;headers=false">Link to reports</a>
+              <a class="external button" href="">Link to reports</a>
               </div>
             </div>
           </div><!-- End Bumper Car Responses Page-->
@@ -440,7 +441,7 @@
           <div data-page="report-arcade-other" class="page cached">
             <div class="page-content">
               <div class="content-block">
-              <a class="external button" href="https://docs.google.com/spreadsheets/d/1rXWZ9D1fguyeKZSQKDqUPJLEhkOKXMyU-1KTdPHE6Kw/pubhtml?gid=845700485&amp;single=true&amp;widget=true&amp;headers=false">Link to reports</a>
+              <a class="external button" href="">Link to reports</a>
               </div>
             </div>
           </div><!-- End Other Arcade Responses Page-->
@@ -456,15 +457,15 @@
                 </p>
                 <p class="buttons-row">
                   <a href="https://docs.google.com/forms/d/1I4lwAXTSL7qHhsyLCPykJUKAqnm1tYKG9HER0dKv1HI/viewform?entry.2050663756=<?php print($name) ?>&entry.1656903657" class="external button button-round">Bowling</a>
-                  <a href="#report-bowling" class="button button-round">View Reports</a>
+                  <a href="https://docs.google.com/spreadsheets/d/1BKubrOQTf8QTsDPQNo_7D9-cBgasjs63kfpc5kGS19E/pubhtml?gid=1138065731&amp;single=true&amp;widget=true&amp;headers=false" class="external button button-round">View Reports</a>
                 </p>
                 <p class="buttons-row">
                   <a href="https://docs.google.com/forms/d/19cl96PkfDnZAhPI3P3rNfoh9XwHmH7Ox0XidlDK_rm0/viewform?entry.2050663756=<?php print($name) ?>&entry.1656903657" class="external button button-round">NASCAR</a>
-                  <a href="#report-nascar" class="button button-round">View Reports</a>
+                  <a href="https://docs.google.com/spreadsheets/d/1X7-novVXksifsMY8YDuEfYV_EpfdXQwKWpsU_Ksq3PY/pubhtml?gid=395487223&amp;single=true&amp;widget=true&amp;headers=false" class="external button button-round">View Reports</a>
                 </p>
                 <p class="buttons-row">
                   <a href="https://docs.google.com/forms/d/1kXge1fOqsWh_dVjO1OGUDk59iJC6ji61kiw20qhFa5Y/viewform?entry.403794036=<?php print($name) ?>&entry.493483913&entry.927264077" class="external button button-round">Everything Else</a>
-                  <a href="#report-cc" class="button button-round">View Reports</a>
+                  <a href="https://docs.google.com/spreadsheets/d/1eCiut5vLN_xGZS-9Yai9xja89as30qCmTHnIsDJBlUM/pubhtml?gid=543316195&amp;single=true&amp;widget=true&amp;headers=false" class="external button button-round">View Reports</a>
                 </p>
                 <p>Reporting errors take you away from this app and will immediately notify the appropriate maintenance.</p>
               </div>
@@ -474,7 +475,7 @@
           <div data-page="report-bowling" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <a class="external button" href="https://docs.google.com/spreadsheets/d/1BKubrOQTf8QTsDPQNo_7D9-cBgasjs63kfpc5kGS19E/pubhtml?gid=1138065731&amp;single=true&amp;widget=true&amp;headers=false">Link to reports</a>
+                <a class="external button" href="">Link to reports</a>
               </div>
             </div>
           </div><!-- End CC Responses Page-->
@@ -482,7 +483,7 @@
           <div data-page="report-nascar" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <a class="external button" href="https://docs.google.com/spreadsheets/d/1X7-novVXksifsMY8YDuEfYV_EpfdXQwKWpsU_Ksq3PY/pubhtml?gid=395487223&amp;single=true&amp;widget=true&amp;headers=false">Link to reports</a>
+                <a class="external button" href="">Link to reports</a>
               </div>
             </div>
           </div><!-- End CC Responses Page-->
@@ -490,7 +491,7 @@
           <div data-page="report-cc" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <a class="external button" href="https://docs.google.com/spreadsheets/d/1eCiut5vLN_xGZS-9Yai9xja89as30qCmTHnIsDJBlUM/pubhtml?gid=543316195&amp;single=true&amp;widget=true&amp;headers=false">Link to reports</a>
+                <a class="external button" href="">Link to reports</a>
               </div>
             </div>
           </div><!-- End CC Responses Page-->
@@ -704,30 +705,30 @@
             <div class="page-content">
               <div class="content-block">
               <form>
-  <script>
-    function arcadeDone() {
-      if (window.XMLHttpRequest) {
-          // code for IE7+, Firefox, Chrome, Opera, Safari
-          xmlhttp = new XMLHttpRequest();
-      } else {
-          // code for IE6, IE5
-          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange = function() {
-          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-              document.getElementById("arcadedone").innerHTML = xmlhttp.responseText;
-          }
-      }
-      xmlhttp.open("GET","getDone.php",true);
-      xmlhttp.send();
-    }
+                <script>
+                  function arcadeDone() {
+                    if (window.XMLHttpRequest) {
+                        // code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp = new XMLHttpRequest();
+                    } else {
+                        // code for IE6, IE5
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    xmlhttp.onreadystatechange = function() {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                            document.getElementById("arcadedone").innerHTML = xmlhttp.responseText;
+                        }
+                    }
+                    xmlhttp.open("GET","getDone.php",true);
+                    xmlhttp.send();
+                  }
 
-    function removeArcadeDone(){
-      document.getElementById("arcadedone").innerHTML = "";
-    }
-  </script>
+                  function removeArcadeDone(){
+                    document.getElementById("arcadedone").innerHTML = "";
+                  }
+                </script>
                 <button type="button" onclick="arcadeDone()">Show</button>
-                <button type="button" onclick="removeArcadeDone()">Remove</button>
+                <button type="button" onclick="removeArcadeDone()">Hide</button>
               </form>
                 <div id="arcadedone"></div>
               </div>
@@ -821,12 +822,14 @@
             <div class="page-content">
               <div class="content-block">
                 <div class="list-block">
-                  <ul>
+                    <!-- Date -->
+                  <ul>  
                     <li>
                       <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-calendar"></i></div>
                         <div class="item-inner">
                           <div class="item-input">
-                            <input type="text" placeholder="Select a date" readonly id="calendar-date-format">
+                            <input type="date" value="<?php print(date("Y-m-d")); ?>">
                           </div>
                         </div>
                       </div>
@@ -1000,17 +1003,6 @@
                         </div>
                       </div>
                     </li>
-                    <!-- Date -->
-<!--                     <li>
-                      <div class="item-content">
-                        <div class="item-media"><i class="icon icon-form-calendar"></i></div>
-                        <div class="item-inner">
-                          <div class="item-input">
-                            <input type="date" placeholder="Birth day" value="2014-04-30">
-                          </div>
-                        </div>
-                      </div>
-                    </li> -->
                   </ul>
                 </div>
                 <input type="Submit" class="button button-big button-green" name="submit" value="Submit Comments">
