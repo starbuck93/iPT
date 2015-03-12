@@ -70,8 +70,7 @@
 
     <link rel="manifest" href="manifest.json"> <!--For Chrome/Android-->
     <meta name="theme-color" content="#0059FF"> <!--For Chrome/Android or use orange here #FFA500-->
-    <!-- <meta name="apple-mobile-web-app-status-bar-style" content="#0059FF"> <!--For Safari/iOS--> 
-    
+
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -230,6 +229,11 @@
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
             <div class="center sliding">PT Sports</div>
           </div>
+<!-- Navbar inner for Feedback page-->
+          <div data-page="submitfeedback" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding">Submit Feedback!</div>
+          </div>
 <!-- Navbar inner for BSP page-->
           <div data-page="bsp" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
@@ -381,6 +385,9 @@
                   </li>
                   <li>
                     <a href="https://www.facebook.com/groups/228830403837342/" class="external item-link list-button">Facebook Group</a>
+                  </li>
+                  <li>
+                    <a href="#submitfeedback" class="item-link list-button">Submit Feedback!</a>
                   </li>
                 </ul>
               </div>
@@ -696,7 +703,33 @@
           <div data-page="arcadeclosing1" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <p></p>
+              <form>
+  <script>
+    function arcadeDone() {
+      if (window.XMLHttpRequest) {
+          // code for IE7+, Firefox, Chrome, Opera, Safari
+          xmlhttp = new XMLHttpRequest();
+      } else {
+          // code for IE6, IE5
+          xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function() {
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+              document.getElementById("arcadedone").innerHTML = xmlhttp.responseText;
+          }
+      }
+      xmlhttp.open("GET","getDone.php",true);
+      xmlhttp.send();
+    }
+
+    function removeArcadeDone(){
+      document.getElementById("arcadedone").innerHTML = "";
+    }
+  </script>
+                <button type="button" onclick="arcadeDone()">Show</button>
+                <button type="button" onclick="removeArcadeDone()">Remove</button>
+              </form>
+                <div id="arcadedone"></div>
               </div>
             </div>
           </div><!-- End Arcade Closing Page 1-->
@@ -743,16 +776,18 @@
                         </label>
                       </li>
                       <?php } ?>
+                </div>      
+                      <div class="row">            
+                        <div class="col-33"></div>
+                        <div class="col-33">
+                          <button type="submit" form="arcadeChecks" value="Submit" class="external button button-big button-fill color-green">Submit</button>
+                        </div>
+                        <div class="col-33"></div>
+                      </div>                    
                     </ul>
                   </form>
-                </div>
-                <div class="row">            
-                  <div class="col-33"></div>
-                  <div class="col-33">
-                    <input type="submit" form="arcadeChecks" value="Submit" class="button button-big button-fill color-green">
-                  </div>
-                  <div class="col-33"></div>
-                </div>
+                
+
                 <br>
                 <ul>
                   <li>Empty ticket stations and sweep them out.</li>
@@ -913,7 +948,78 @@
                 <p>If you are reading this and you know something about sports more than "Talk to Andrew or Wey" or <a href="http://abileneindoor.com" class="external">the website</a> please let me know.</p>
               </div>
             </div>
-          </div><!-- End Sports Page 1 -->
+          </div><!-- End Sports Page -->
+
+
+          <!-- Feedback Page-->
+          <div data-page="submitfeedback" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <div class="content-block-title">Send me a message!</div>
+                <form method="POST" action="sendmail.php">
+                <div class="list-block">
+                  <ul>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="fa fa-star"></i></div>
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input type="text" value="iPT Comments" name="subject">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input type="text" placeholder="Your name" name="fullname">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-email"></i></div>
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input type="email" placeholder="Your E-mail" name="email">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- Textarea -->
+                    <li class="align-top">
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <textarea placeholder="Comments" name="comments"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- Date -->
+<!--                     <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input type="date" placeholder="Birth day" value="2014-04-30">
+                          </div>
+                        </div>
+                      </div>
+                    </li> -->
+                  </ul>
+                </div>
+                <input type="Submit" class="button button-big button-green" name="submit" value="Submit Comments">
+                </form>               
+              </div>
+            </div>
+          </div><!-- End Feedback Page -->
+
+
 
           <!-- BSP Page -->
           <div data-page="bsp" class="page cached">
