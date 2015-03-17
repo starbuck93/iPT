@@ -71,6 +71,8 @@
     <link rel="manifest" href="manifest.json"> <!--For Chrome/Android-->
     <meta name="theme-color" content="#0059FF"> <!--For Chrome/Android or use orange here #FFA500-->
 
+    <link href='http://fonts.googleapis.com/css?family=Racing+Sans+One' rel='stylesheet' type='text/css'>
+
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -80,6 +82,12 @@
       ga('create', 'UA-892952-15', 'auto');
       ga('send', 'pageview');
   </script>
+
+  <script type="text/javascript">
+    function feedbackOnClick(id){
+      document.getElementById(id).className += " disabled";
+    }
+  </script> 
 
 </head>
   <body>
@@ -116,15 +124,7 @@
         <span style="display: block !important; width: 180px; text-align: center; font-family: sans-serif; font-size: 12px;"><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:79601.1.99999&bannertypeclick=wu_simplewhite" title="Abilene, Texas Weather Forecast" target="_blank" class="external"><img src="http://weathersticker.wunderground.com/weathersticker/cgi-bin/banner/ban/wxBanner?bannertype=wu_simplewhite&airportcode=KABI&ForcedCity=Abilene&ForcedState=TX&zip=79601&language=EN" alt="Find more about Weather in Abilene, TX" width="160" /></a><br><a href="http://www.wunderground.com/cgi-bin/findweather/getForecast?query=zmw:79601.1.99999&bannertypeclick=wu_simplewhite" title="Get latest Weather Forecast updates" style="font-family: sans-serif; font-size: 12px" target="_blank" class="external">Click for weather forecast</a></span>      
       </div>
     </div>
-    <!-- Right panel with cover effect-->
-    <div class="panel panel-right panel-cover">
-      <div class="content-block">
-        <p>
-          Link to first time page! <a href="#first-time" onclick="myApp.closePanel()">first time</a>.       
-        </p>
-        <img src="img/icon128.png">
-      </div>
-    </div>
+
     <!-- Views-->
     <div class="views">
       <!-- Your main view, should have "view-main" class-->
@@ -134,7 +134,7 @@
           <!-- Navbar inner for Index page-->
           <div data-page="index" class="navbar-inner">
             <!-- We have home navbar without left link-->
-            <div class="center sliding">PrimeTime Employees</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">iPrimeTime</div>
             <div class="right">
               <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
             </div>
@@ -142,107 +142,111 @@
 <!-- Navbar inner for Arcade Errors page-->
           <div data-page="errors" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Arcade Error Reporting</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Arcade Error Reporting</div>
           </div>
 <!-- Navbar inner for Arcade Reports page-->
           <div data-page="report-laser" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Laser Tag Responses</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Laser Tag Responses</div>
           </div>
 <!-- Navbar inner for Arcade Reports page-->
           <div data-page="report-bumper" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Bumper Car Responses</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Bumper Car Responses</div>
           </div>
 <!-- Navbar inner for Arcade Reports page-->
           <div data-page="report-arcade-other" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Arcade Error Responses</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Arcade Error Responses</div>
           </div>
           <div data-page="ccerrors" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">CC Error Reporting</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">CC Error Reporting</div>
           </div>
           <div data-page="report-bowling" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Bowling Error Responses</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Bowling Error Responses</div>
           </div>
           <div data-page="report-nascar" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">NASCAR Error Responses</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">NASCAR Error Responses</div>
           </div>
           <div data-page="report-cc" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">CC Error Responses</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">CC Error Responses</div>
+          </div>
+          <div data-page="outdoorerrors" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Outdoor Error Reporting</div>
           </div>
           <div data-page="othererrors" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Misc. Error Reporting</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Misc. Error Reporting</div>
           </div>
 <!-- Navbar inner for Arcade Training page-->
           <div data-page="training" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Arcade Training Checklist</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Arcade Training Checklist</div>
           </div>
 <!-- Navbar inner for CC Training page-->
           <div data-page="cc-training" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">CC Training Checklist</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">CC Training Checklist</div>
           </div>
 <!-- Navbar inner for Control Counter Closing page-->
           <div data-page="CCclosing" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">CC Closing Procedures</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">CC Closing Procedures</div>
           </div>
 <!-- Navbar inner for Control Counter Closing page CCclosing2-->
           <div data-page="CCclosing2" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Need to be done</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Need to be done</div>
           </div>
 <!-- Navbar inner for Control Counter Closing page CCclosing1-->
           <div data-page="CCclosing1" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Done!</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Done!</div>
           </div>
 <!-- Navbar inner for Arcade Closing page-->
           <div data-page="closing" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Arcade Closing Procedures</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Arcade Closing Procedures</div>
           </div>
 <!-- Navbar inner for Arcade Closing page arcadeclosing2-->
           <div data-page="arcadeclosing2" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Need to be done</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Need to be done</div>
           </div>
 <!-- Navbar inner for Arcade Closing page arcadeclosing1-->
           <div data-page="arcadeclosing1" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Done!</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Done!</div>
           </div>
 <!-- Navbar inner for Promos page-->
           <div data-page="promos" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Promotions</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Promotions</div>
           </div>
 <!-- Navbar inner for Sports page-->
           <div data-page="sports" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">PT Sports</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">PT Sports</div>
           </div>
 <!-- Navbar inner for Feedback page-->
           <div data-page="submitfeedback" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Submit Feedback!</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Submit Feedback!</div>
           </div>
 <!-- Navbar inner for BSP page-->
           <div data-page="bsp" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Backstage Pass</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Backstage Pass</div>
           </div>
 <!-- Navbar inner for First Time page-->
           <div data-page="first-time" class="navbar-inner cached">
             <!-- <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div> -->
-            <div class="center sliding">How-To</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">How-To</div>
           </div>
         </div>
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
@@ -348,6 +352,29 @@
                       </div></a></li>
                 </ul>
               </div>              
+              <div class="content-block-title"><i class="fa fa-cloud color-blue"></i> Outdoors</div>
+              <div class="list-block">
+                <ul>
+                  <li><a href="#outdoorerrors" class="item-link">
+                      <div class="item-content">
+                        <div class="item-inner"> 
+                          <div class="item-title"><i class="fa fa-exclamation-circle color-red"></i> Error Reporting</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#outdoors" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-thumbs-o-up"></i> Handy Tips</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#outdoorclosing" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-clock-o"></i> Closing Procedures</div>
+                        </div>
+                      </div></a></li>
+                </ul>
+              </div>              
               <div class="content-block-title"><i class="fa fa-globe color-blue"></i> Everything Else</div>
               <div class="list-block">
                 <ul>
@@ -394,25 +421,23 @@
               </div>
             </div> <!-- End Scrollable page content-->
           </div>
+
+
           <!-- Arcade Errors Page-->
           <div data-page="errors" class="page cached">
             <div class="page-content">
               <div class="content-block">
               <p class="buttons-row">
-                <a href="#" class="button button-round disabled">Report Error</a>
-                <a href="#" class="button button-round disabled">View Reports</a>
+                <a href="https://docs.google.com/forms/d/1ELefS6RUAT2ceAwQKHHlg8KzJkOuHR_Fkn--Hg_S3gA/viewform?entry.1706758755=<?php print($name) ?>&entry.1287583411" id="l1" class="external button" id="l1" onclick="feedbackOnClick(this.id)">Laser Tag</a>
+                <a href="https://docs.google.com/spreadsheets/d/1OPQ8mxKgRl-CdcODT4zRDmpX0sGsiqiekbzn2GPxuiI/pubhtml?gid=1440516788&amp;single=true&amp;widget=true&amp;headers=false" id="l2" class="external button" onclick="feedbackOnClick(this.id)">View Reports</a>
               </p>
               <p class="buttons-row">
-                <a href="https://docs.google.com/forms/d/1ELefS6RUAT2ceAwQKHHlg8KzJkOuHR_Fkn--Hg_S3gA/viewform?entry.1706758755=<?php print($name) ?>&entry.1287583411" class="external button button-round">Laser Tag</a>
-                <a href="https://docs.google.com/spreadsheets/d/1OPQ8mxKgRl-CdcODT4zRDmpX0sGsiqiekbzn2GPxuiI/pubhtml?gid=1440516788&amp;single=true&amp;widget=true&amp;headers=false" class="external button button-round">View Reports</a>
+                <a href="https://docs.google.com/forms/d/1xvqciUTfL4_HCS3b0dIbKgQMV_fOlrqS5WB8Y5im7ao/viewform?entry.1706758755=<?php print($name) ?>&entry.1287583411" id="l3" class="external button" onclick="feedbackOnClick(this.id)">Bumper Cars</a>
+                <a href="https://docs.google.com/spreadsheets/d/1_qIw7Dx1eejUxXsdvGF8Ihx0UVTUPTh-rvDx9V57ln0/pubhtml?gid=2014118529&amp;single=true&amp;widget=true&amp;headers=false" id="l4" class="external button" onclick="feedbackOnClick(this.id)">View Reports</a>
               </p>
               <p class="buttons-row">
-                <a href="https://docs.google.com/forms/d/1xvqciUTfL4_HCS3b0dIbKgQMV_fOlrqS5WB8Y5im7ao/viewform?entry.1706758755=<?php print($name) ?>&entry.1287583411" class="external button button-round">Bumper Cars</a>
-                <a href="https://docs.google.com/spreadsheets/d/1_qIw7Dx1eejUxXsdvGF8Ihx0UVTUPTh-rvDx9V57ln0/pubhtml?gid=2014118529&amp;single=true&amp;widget=true&amp;headers=false" class="external button button-round">View Reports</a>
-              </p>
-              <p class="buttons-row">
-                <a href="https://docs.google.com/forms/d/1kKL8uH2d-YBkSzPdk0cmieosCYD0cweiYnWBrqN3ID8/viewform?entry.403794036=<?php print($name) ?>&entry.493483913&entry.927264077" class="external button button-round">Everything Else</a>
-                <a href="https://docs.google.com/spreadsheets/d/1rXWZ9D1fguyeKZSQKDqUPJLEhkOKXMyU-1KTdPHE6Kw/pubhtml?gid=845700485&amp;single=true&amp;widget=true&amp;headers=false" class="external button button-round">View Reports</a>
+                <a href="https://docs.google.com/forms/d/1kKL8uH2d-YBkSzPdk0cmieosCYD0cweiYnWBrqN3ID8/viewform?entry.403794036=<?php print($name) ?>&entry.493483913&entry.927264077" id="l5" class="external button" onclick="feedbackOnClick(this.id)">Everything Else</a>
+                <a href="https://docs.google.com/spreadsheets/d/1rXWZ9D1fguyeKZSQKDqUPJLEhkOKXMyU-1KTdPHE6Kw/pubhtml?gid=845700485&amp;single=true&amp;widget=true&amp;headers=false" id="l6" class="external button" onclick="feedbackOnClick(this.id)">View Reports</a>
               </p>
                 <!-- <p><a href="https://docs.google.com/forms/d/1ELefS6RUAT2ceAwQKHHlg8KzJkOuHR_Fkn--Hg_S3gA/viewform" class="external button button-round">Laser Tag</a></p> -->
                 <!-- <p><a href="https://docs.google.com/forms/d/1xvqciUTfL4_HCS3b0dIbKgQMV_fOlrqS5WB8Y5im7ao/viewform" class="external button button-round">Bumper Car</a></p> -->
@@ -445,27 +470,21 @@
               </div>
             </div>
           </div><!-- End Other Arcade Responses Page-->
-
-
           <!-- CC Errors Page-->
           <div data-page="ccerrors" class="page cached">
             <div class="page-content">
               <div class="content-block">
                 <p class="buttons-row">
-                  <a href="#" class="button button-round disabled">Report Error</a>
-                  <a href="#" class="button button-round disabled">View Reports</a>
+                  <a href="https://docs.google.com/forms/d/1I4lwAXTSL7qHhsyLCPykJUKAqnm1tYKG9HER0dKv1HI/viewform?entry.2050663756=<?php print($name) ?>&entry.1656903657" class="external button" id="c1" onclick="feedbackOnClick(this.id)">Bowling</a>
+                  <a href="https://docs.google.com/spreadsheets/d/1BKubrOQTf8QTsDPQNo_7D9-cBgasjs63kfpc5kGS19E/pubhtml?gid=1138065731&amp;single=true&amp;widget=true&amp;headers=false" class="external button" id="c2" onclick="feedbackOnClick(this.id)">View Reports</a>
                 </p>
                 <p class="buttons-row">
-                  <a href="https://docs.google.com/forms/d/1I4lwAXTSL7qHhsyLCPykJUKAqnm1tYKG9HER0dKv1HI/viewform?entry.2050663756=<?php print($name) ?>&entry.1656903657" class="external button button-round">Bowling</a>
-                  <a href="https://docs.google.com/spreadsheets/d/1BKubrOQTf8QTsDPQNo_7D9-cBgasjs63kfpc5kGS19E/pubhtml?gid=1138065731&amp;single=true&amp;widget=true&amp;headers=false" class="external button button-round">View Reports</a>
+                  <a href="https://docs.google.com/forms/d/19cl96PkfDnZAhPI3P3rNfoh9XwHmH7Ox0XidlDK_rm0/viewform?entry.2050663756=<?php print($name) ?>&entry.1656903657" class="external button" id="c3" onclick="feedbackOnClick(this.id)">NASCAR</a>
+                  <a href="https://docs.google.com/spreadsheets/d/1X7-novVXksifsMY8YDuEfYV_EpfdXQwKWpsU_Ksq3PY/pubhtml?gid=395487223&amp;single=true&amp;widget=true&amp;headers=false" class="external button" id="c4" onclick="feedbackOnClick(this.id)">View Reports</a>
                 </p>
                 <p class="buttons-row">
-                  <a href="https://docs.google.com/forms/d/19cl96PkfDnZAhPI3P3rNfoh9XwHmH7Ox0XidlDK_rm0/viewform?entry.2050663756=<?php print($name) ?>&entry.1656903657" class="external button button-round">NASCAR</a>
-                  <a href="https://docs.google.com/spreadsheets/d/1X7-novVXksifsMY8YDuEfYV_EpfdXQwKWpsU_Ksq3PY/pubhtml?gid=395487223&amp;single=true&amp;widget=true&amp;headers=false" class="external button button-round">View Reports</a>
-                </p>
-                <p class="buttons-row">
-                  <a href="https://docs.google.com/forms/d/1kXge1fOqsWh_dVjO1OGUDk59iJC6ji61kiw20qhFa5Y/viewform?entry.403794036=<?php print($name) ?>&entry.493483913&entry.927264077" class="external button button-round">Everything Else</a>
-                  <a href="https://docs.google.com/spreadsheets/d/1eCiut5vLN_xGZS-9Yai9xja89as30qCmTHnIsDJBlUM/pubhtml?gid=543316195&amp;single=true&amp;widget=true&amp;headers=false" class="external button button-round">View Reports</a>
+                  <a href="https://docs.google.com/forms/d/1kXge1fOqsWh_dVjO1OGUDk59iJC6ji61kiw20qhFa5Y/viewform?entry.403794036=<?php print($name) ?>&entry.493483913&entry.927264077" class="external button" id="c5" onclick="feedbackOnClick(this.id)">Everything Else</a>
+                  <a href="https://docs.google.com/spreadsheets/d/1eCiut5vLN_xGZS-9Yai9xja89as30qCmTHnIsDJBlUM/pubhtml?gid=543316195&amp;single=true&amp;widget=true&amp;headers=false" class="external button" id="c6" onclick="feedbackOnClick(this.id)">View Reports</a>
                 </p>
                 <p>Reporting errors take you away from this app and will immediately notify the appropriate maintenance.</p>
               </div>
@@ -495,18 +514,34 @@
               </div>
             </div>
           </div><!-- End CC Responses Page-->
-
+          <!-- Outdoors Errors Page-->
+          <div data-page="outdoorerrors" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <p class="buttons-row">
+                  <a href="https://docs.google.com/forms/d/12deoaphId_G6P1xKA3HtcvAZDRv34CJPzKz3MtqHPxQ/viewform?entry.46989363=<?php print($name) ?>&entry.348250278" class="external button" id="o1" onclick="feedbackOnClick(this.id)">Go Carts</a>
+                  <a href="https://docs.google.com/spreadsheets/d/1ExcNjcFAXQUM75RxDvNBOg7zGV0BOP1kvwUWWfGWYkc/pubhtml?gid=1802604022&amp;single=true&amp;widget=true&amp;headers=false" class="external button" id="o2" onclick="feedbackOnClick(this.id)">View Reports</a>
+                </p>
+                <p class="buttons-row">
+                  <a href="https://docs.google.com/forms/d/1auvg7Jil8lsTxwevRJ5lG7UXewNEQz4zBxpFhwLi-iw/viewform?entry.2050663756=<?php print($name) ?>&entry.1656903657" class="external button" id="o3" onclick="feedbackOnClick(this.id)">Batting Cages</a>
+                  <a href="https://docs.google.com/spreadsheets/d/1uLV0upd81ZSac-19dQWkxL8Tl8bMWkZc0hRjU7HWs0E/pubhtml?gid=817533123&amp;single=true&amp;widget=true&amp;headers=false" class="external button" id="o4" onclick="feedbackOnClick(this.id)">View Reports</a>
+                </p>
+                <p>Reporting errors takes you away from this app and immediately notifies the appropriate maintenance.</p>
+              </div>
+            </div>
+          </div><!-- End Outdoors Errors Page-->
           <!-- Micelaneous Errors Page-->
           <div data-page="othererrors" class="page cached">
             <div class="page-content">
               <div class="content-block">
-                <p><a href="https://docs.google.com/forms/d/12deoaphId_G6P1xKA3HtcvAZDRv34CJPzKz3MtqHPxQ/viewform?entry.46989363=<?php print($name) ?>&entry.348250278" class="external button button-round">Go Carts</a></p>
-                <p><a href="https://docs.google.com/forms/d/1auvg7Jil8lsTxwevRJ5lG7UXewNEQz4zBxpFhwLi-iw/viewform?entry.2050663756=<?php print($name) ?>&entry.1656903657" class="external button button-round">Batting Cage</a></p>
-                <p><a href="https://docs.google.com/forms/d/1OSwjgVnmHK8uTk6HhwMIgeBbatEcYaIgXM_ns9d3ibw/viewform?entry.1960077983=<?php print($name) ?>&entry.1752541001&entry.1436979688" class="external button button-round">All Other Errors</a></p>
+                <p class="buttons-row">
+                  <a href="https://docs.google.com/forms/d/1OSwjgVnmHK8uTk6HhwMIgeBbatEcYaIgXM_ns9d3ibw/viewform?entry.1960077983=<?php print($name) ?>&entry.1752541001&entry.1436979688" class="external button" id="o5" onclick="feedbackOnClick(this.id)">All Other Errors</a>
+                  <a href="https://docs.google.com/spreadsheets/d/1WA5gRuC5SbVrKYetT_S1g6bh9jrf6jvAOdTAveq9Iqk/pubhtml?gid=861023604&amp;single=true&amp;widget=true&amp;headers=false" class="external button" id="o6" onclick="feedbackOnClick(this.id)">View Reports</a>
+                </p>
                 <p>Reporting errors takes you away from this app and immediately notifies the appropriate maintenance.</p>
               </div>
             </div>
-          </div><!-- End CC Errors Page-->
+          </div><!-- End Micelaneous Errors Page-->
           <!-- Arcade Training Page-->
           <div data-page="training" class="page cached">
             <div class="page-content">
@@ -1005,12 +1040,14 @@
                     </li>
                   </ul>
                 </div>
-                <input type="Submit" class="button button-big button-green" name="submit" value="Submit Comments">
+                <input id="Feedbackbutton" type="Submit" class="button button-big button-green" name="submit" value="Submit Comments" onclick="feedbackOnClick(this.id)">
                 </form>               
               </div>
               <div class="content-block">
                 <p>Yes, I really do get an email when you submit this.</p>
               </div>
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+              <!-- doing this to make sure the user can see what they are typing! -->
             </div>
           </div><!-- End Feedback Page -->
 
@@ -1080,7 +1117,7 @@
         </div>
         <!-- Bottom Toolbar-->
         <div class="toolbar">
-          <div class="toolbar-inner"><a href="#" data-panel="left" class="link open-panel">Left Panel</a><a href="#" data-panel="right" class="link open-panel">Right Panel</a></div>
+          <div class="toolbar-inner"><a href="#" data-panel="left" class="link open-panel">Left Panel</a></div>
         </div>
       </div>
     </div>
