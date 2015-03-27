@@ -134,10 +134,11 @@
           <!-- Navbar inner for Index page-->
           <div data-page="index" class="navbar-inner">
             <!-- We have home navbar without left link-->
-            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">iPrimeTime</div>
-            <div class="right">
-              <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            <div class="left">
+              <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
             </div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">iPrimeTime</div>
+
           </div>
 <!-- Navbar inner for Arcade Errors page-->
           <div data-page="errors" class="navbar-inner cached">
@@ -187,6 +188,21 @@
           <div data-page="training" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
             <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Arcade Training Checklist</div>
+          </div>
+<!-- Navbar inner for WOZ Main page-->
+          <div data-page="woz" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Wiz of Oz Stuff</div>
+          </div>
+<!-- Navbar inner for WOZ 1 page-->
+          <div data-page="woz1" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Wiz of Oz Stuff</div>
+          </div>
+<!-- Navbar inner for WOZ 2 page-->
+          <div data-page="woz2" class="navbar-inner cached">
+            <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Wiz of Oz Stuff</div>
           </div>
 <!-- Navbar inner for CC Training page-->
           <div data-page="cc-training" class="navbar-inner cached">
@@ -312,6 +328,12 @@
                       <div class="item-content"> 
                         <div class="item-inner">
                           <div class="item-title"><i class="fa fa-check-circle color-yellow"></i> Training Checklist</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#woz" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-bar-chart"></i> Wizard Of Oz Reports</div>
                         </div>
                       </div></a></li>
                   <li><a href="#closing" class="item-link">
@@ -838,7 +860,7 @@
                   <li>Shut down Laser Tag and XD Theater.</li>
                   <li>Vacuum Laser Tag and XD Theater.</li>
                   <li>Declutter all counters and cabinets (including Laser Tag).</li>
-                  <li>Count Wizard of Oz coins and return to game.</li>
+                  <li><a href="#woz">Count Wizard of Oz coins and return to game.</a></li>
                   <li>Empty Wizard of Oz drop trays.</li>
                   <li>Stock all games with tickets.</li>
                   <li>Make sure all games listed under your day have been cleaned.</li>
@@ -851,6 +873,158 @@
               </div>
             </div>
           </div><!-- End Arcade Closing Page 2-->
+
+
+
+
+          <!-- WOZ Page-->
+          <div data-page="woz" class="page cached">
+            <div class="page-content">
+              <div class="list-block">
+                <ul>
+                  <li><a href="#woz1" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-bar-chart"></i> View Reports</div>
+                        </div>
+                      </div></a></li>
+                  <li><a href="#woz2" class="item-link">
+                      <div class="item-content"> 
+                        <div class="item-inner">
+                          <div class="item-title"><i class="fa fa-plus-circle"></i> Add Coins</div>
+                        </div>
+                      </div></a></li>
+                </ul>
+              </div>
+            </div>
+          </div> <!--End WOZ Page-->
+          <!-- WOZ 1 Page-->
+          <div data-page="woz1" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <form>
+                <script>
+                  function getWoz() {
+                    var date1 = document.getElementById("day").value;
+                    var date2 = document.getElementById("day2").value;
+                    if (window.XMLHttpRequest) {
+                        // code for IE7+, Firefox, Chrome, Opera, Safari
+                        xmlhttp = new XMLHttpRequest();
+                    } else {
+                        // code for IE6, IE5
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    xmlhttp.onreadystatechange = function() {
+                        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                            document.getElementById("wozCoins").innerHTML += xmlhttp.responseText;
+                        }
+                    }
+                    var data = "getCoins.php?date1=";
+                    data = data.concat(date1)
+                    data = data.concat("&date2=")
+                    data = data.concat(date2)
+                    xmlhttp.open("GET",data,true);
+                    xmlhttp.send();
+                  }
+
+                  function removeWOZDone(){
+                    document.getElementById("wozCoins").innerHTML = "";
+                  }
+                </script>
+
+                <div class="list-block">
+                    <!-- Date -->
+                  <ul>  
+                    <li>
+                      <div class="item-content">
+                        <div class="item-title label">From</div>
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input id="day" name="day" type="date" value="<?php print(date("Y-m-d")); ?>">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <!-- <input type="hidden" name="getThings" value="true"> -->
+                  <!-- <input type="hidden" name="fullname" value="<?php print($name) ?>"> -->
+                  <ul>  
+                    <li>
+                      <div class="item-content">
+                        <div class="item-inner">
+                          <div class="item-title label">To</div>
+                          <div class="item-input">
+                            <input id="day2" name="day2" type="date" value="<?php print(date("Y-m-d")); ?>">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <br>
+                  <button id="Feedbackbutton" type="button" class="button button-big button-green" onclick="getWoz()">Get Coin Totals</button>
+                </div>
+                </form>
+                <div id="wozCoins"></div>
+              </div>
+            </div>
+          </div> <!--End WOZ 1 Page-->
+          <!-- WOZ 2 Page-->
+          <div data-page="woz2" class="page cached">
+            <div class="page-content">
+              <div class="content-block">
+                <form method="POST" action="woz.php">
+                <div class="list-block">
+                  <ul>
+                    <li>
+                      <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input type="text" value="<?php print($name) ?>" name="fullname" required>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                      <div class="item-title label">Green</div>
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input type="text" value="" placeholder="# Green" name="green">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                      <div class="item-title label">Red</div>
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input type="text" value="" placeholder="# Red" name="red">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="item-content">
+                      <div class="item-title label">Silver</div>
+                        <div class="item-inner">
+                          <div class="item-input">
+                            <input type="text" value="" placeholder="# Silver" name="silver">
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <input type="hidden" name="addCoins" value="true">
+                <input id="Feedbackbutton" type="Submit" class="button button-big button-green" name="submit" value="Submit WOZ Coins" onclick="feedbackOnClick(this.id)">
+                </form>
+                <p>Your name will be recorded.<br>Submit as many times as you want in one night, it doesn't have to be all at the same time!</p>
+                <p>FYI: Coins submitted after midnight will be recorded on the next day's report.</p>
+              </div>
+            </div>
+          </div> <!--End WOZ 2 Page-->
 
           <!-- CC Closing Page-->
           <div data-page="CCclosing" class="page cached">
