@@ -158,7 +158,7 @@
 <!-- Navbar inner for Arcade Reports page-->
           <div data-page="report-arcade-other" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Arcade Error Responses</div>
+            <div class="center sliding" style="font-family: 'Racing Sans One', cursive;">Misc Error Reporting</div>
           </div>
           <div data-page="ccerrors" class="navbar-inner cached">
             <div class="left sliding"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
@@ -458,7 +458,7 @@
                 <a href="https://docs.google.com/spreadsheets/d/1_qIw7Dx1eejUxXsdvGF8Ihx0UVTUPTh-rvDx9V57ln0/pubhtml?gid=2014118529&amp;single=true&amp;widget=true&amp;headers=false" id="l4" class="external button" onclick="feedbackOnClick(this.id)">View Reports</a>
               </p>
               <p class="buttons-row">
-                <a href="https://docs.google.com/forms/d/1kKL8uH2d-YBkSzPdk0cmieosCYD0cweiYnWBrqN3ID8/viewform?entry.403794036=<?php print($name) ?>&entry.493483913&entry.927264077" id="l5" class="external button" onclick="feedbackOnClick(this.id)">Everything Else</a>
+                <a href="#report-arcade-other" id="l5" class="button">Everything Else</a>
                 <a href="https://docs.google.com/spreadsheets/d/1rXWZ9D1fguyeKZSQKDqUPJLEhkOKXMyU-1KTdPHE6Kw/pubhtml?gid=845700485&amp;single=true&amp;widget=true&amp;headers=false" id="l6" class="external button" onclick="feedbackOnClick(this.id)">View Reports</a>
               </p>
                 <!-- <p><a href="https://docs.google.com/forms/d/1ELefS6RUAT2ceAwQKHHlg8KzJkOuHR_Fkn--Hg_S3gA/viewform" class="external button button-round">Laser Tag</a></p> -->
@@ -488,7 +488,56 @@
           <div data-page="report-arcade-other" class="page cached">
             <div class="page-content">
               <div class="content-block">
-              <a class="external button" href="">Link to reports</a>
+                <form action="https://docs.google.com/forms/d/1kKL8uH2d-YBkSzPdk0cmieosCYD0cweiYnWBrqN3ID8/formResponse" method="POST" id="ss-form" target="_self" onsubmit="">
+                  <div class="content-block-title">Arcade Reports Form</div>
+
+                  <div class="list-block">
+                    <ul>
+                      <!-- Text inputs -->
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media"><i class="icon icon-form-name"></i></div>
+                          <div class="item-inner">
+                            <div class="item-title label">Name</div>
+                            <div class="item-input">
+                              <input type="text" name="entry.403794036" value="<?php print($name) ?>" id="entry_403794036" required>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <p>Name a game, or other specific thing here...</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-title label">Here:</div>
+                            <div class="item-input">
+                              <input type="text" name="entry.493483913" value="" id="entry_493483913" required>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <!-- Textarea -->
+                      <li class="align-top">
+                        <div class="item-content">
+                          <div class="item-media"><i class="icon icon-form-comment"></i></div>
+                          <div class="item-inner">
+                            <div class="item-title label">Explain the problem.</div>
+                            <div class="item-input">
+                              <textarea name="entry.927264077" rows="8" cols="0" id="entry_927264077"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <button class="button" type="submit" name="submit" value="Submit">Submit</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div><!-- End Other Arcade Responses Page-->
@@ -990,7 +1039,7 @@
                       <div class="item-title label">Green</div>
                         <div class="item-inner">
                           <div class="item-input">
-                            <input type="text" value="" placeholder="# Green" name="green">
+                            <input type="number" placeholder="# Green" name="green">
                           </div>
                         </div>
                       </div>
@@ -1000,7 +1049,7 @@
                       <div class="item-title label">Red</div>
                         <div class="item-inner">
                           <div class="item-input">
-                            <input type="text" value="" placeholder="# Red" name="red">
+                            <input type="number" placeholder="# Red" name="red">
                           </div>
                         </div>
                       </div>
@@ -1010,7 +1059,7 @@
                       <div class="item-title label">Silver</div>
                         <div class="item-inner">
                           <div class="item-input">
-                            <input type="text" value="" placeholder="# Silver" name="silver">
+                            <input type="number" placeholder="# Silver" name="silver">
                           </div>
                         </div>
                       </div>

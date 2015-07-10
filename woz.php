@@ -1,15 +1,19 @@
 <?php
 
-if(isset($_REQUEST['green']))
+$green = 0;
+$red = 0;
+$silver = 0;
+if(isset($_REQUEST['green']) && ($_REQUEST['green']) != "")
 	$green = $_REQUEST['green'];
-else $green = 0;
-if(isset($_REQUEST['green']))
+if(isset($_REQUEST['red']) && ($_REQUEST['red']) != "")
 	$red = $_REQUEST['red'];
-else $red = 0;
-if(isset($_REQUEST['green']))
+if(isset($_REQUEST['silver']) && ($_REQUEST['silver']) != "")
 	$silver = $_REQUEST['silver'];
-else $silver = 0;
 
+
+
+print($green . " " . $red . " " . $silver);
+echo "<br>";
 // if(!is_int($green))
 // 	$green = 0;
 // if(!is_int($silver))
@@ -65,7 +69,7 @@ if(isset($_REQUEST['addCoins']))
 	print($sql);
 	$result = mysqli_query($con,$sql);
 	if(!$result)
-		die(' Failed');
+		die(' Failed ' . $con->error);
 	$message = "Success";
 	mysqli_close($con);
 	header("Location: index.php");

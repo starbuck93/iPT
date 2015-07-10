@@ -18,6 +18,8 @@
 <body>
 
 <?php
+	$time1 = time();
+	date_default_timezone_set('America/Chicago'); 
 	$date1=$_REQUEST['date1'];
 	$date2=$_REQUEST['date2'];
 	$start = date_parse_from_format("Y-m-d",$date1);
@@ -111,6 +113,7 @@
 		echo "</table><br>";
 		mysqli_close($con);
 }
+echo "That took " . time()-$time1 . " seconds to do that.<br>";
 
 
 ?>
